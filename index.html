@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lumières nocturnes et activité économique</title>
+<title>Lumières nocturnes — 8 cas d'usage</title>
 <meta name="description" content="Tableau de bord : l'activité économique mesurée par les lumières nocturnes (VIIRS), aux niveaux national et régional.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2300553A'/%3E%3Ccircle cx='11' cy='13' r='3' fill='%23f5c242'/%3E%3Ccircle cx='21' cy='19' r='2' fill='%23f5c242'/%3E%3Ccircle cx='19' cy='9' r='1.4' fill='%23fde7a6'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/vendor/leaflet.css">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/ext.css">
+<link rel="stylesheet" href="assets/map_ext.css">
+<link rel="stylesheet" href="assets/agent.css">
 <script>
-  // apply the stored theme before first paint (no flash)
-  try { const t = localStorage.getItem("ntl-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+  // apply the stored theme (dark by default) before first paint (no flash)
+  try { const t = localStorage.getItem("ntl-theme"); document.documentElement.dataset.theme = (t === "light" || t === "dark") ? t : "dark"; } catch (e) { document.documentElement.dataset.theme = "dark"; }
 </script>
 </head>
 <body>
@@ -20,7 +22,7 @@
   <div class="brand">
     <img id="flag" class="flag" alt="Drapeau" hidden>
     <div>
-      <div class="eyebrow">Banque africaine de développement · Lumières nocturnes et activité économique</div>
+      <div class="eyebrow">Banque africaine de développement · Lumières nocturnes : 8 cas d'usage</div>
       <h1 id="country-title">Chargement…</h1>
     </div>
   </div>
@@ -268,6 +270,8 @@
 <script src="assets/vendor/plotly.min.js" charset="utf-8"></script>
 <script>window.Plotly || document.write('<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js" charset="utf-8"><\/script>')</script>
 <script src="assets/ext.js"></script>
+<script src="assets/map_ext.js"></script>
+<script src="assets/agent.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

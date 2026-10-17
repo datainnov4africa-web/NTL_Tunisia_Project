@@ -108,7 +108,7 @@ function renderHeader() {
     fl.src = `data/${S.iso}/flag.svg`;
   }
   $("#country-title").textContent = `${m.name} · ${m.period[0]}–${m.period[1]}`;
-  document.title = `${m.name} — lumières nocturnes et activité économique`;
+  document.title = `${m.name} — lumières nocturnes : 8 cas d'usage`;
   $("#synthetic-banner").hidden = !m.synthetic;
   $("#foot").innerHTML = `Mis à jour le ${new Date(m.generated_at).toLocaleString("fr-FR")} · Données VIIRS (NOAA/EOG, NASA), ` +
     `limites ${esc((m.boundaries && m.boundaries.ADM1) || "geoBoundaries")}, population ${esc(m.pop_source || "GHSL")}, ` +
@@ -134,9 +134,9 @@ Object.assign(RENDER, (window.NTL_EXT || {}).render || {});   // extension pages
 
 RENDER.overview = () => {
   const { meta, summary, monthly } = S.d;
-  $("#lede").textContent = `Ce tableau de bord mesure l'activité économique de ${meta.name} à partir des lumières émises la nuit ` +
-    `et observées par satellite. Plus une zone produit, échange et consomme d'électricité, plus elle brille : la lumière ` +
-    `est un indicateur indirect, disponible partout, chaque mois, y compris là où les statistiques manquent.`;
+  $("#lede").textContent = `Ce tableau de bord met les lumières nocturnes observées par satellite au service de huit cas d'usage ` +
+    `pour ${meta.name} : dynamiques économiques, croissance régionale, PIB, chocs, inégalités et électrification, industrie, tourisme et urbanisation. ` +
+    `La lumière est un indicateur indirect, disponible partout, chaque mois, y compris là où les statistiques manquent.`;
   $("#kpis").innerHTML = summary.kpis.map((k) => {
     const v = k.fmt === "num" ? F.num(k.value) : k.fmt === "pct" ? F.pct(k.value) : k.fmt === "pct0" ? F.share(k.value) : k.fmt === "people" ? F.people(k.value) : F.num2(k.value);
     return `<div class="kpi"><div class="label">${esc(k.label)}</div><div class="value">${v}</div><div class="sub">${esc(k.sub)}</div></div>`;

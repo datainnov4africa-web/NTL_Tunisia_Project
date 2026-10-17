@@ -8,7 +8,21 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const TX = {
     fr: {
-      tabs: { industry: "Industrie", tourism: "Tourisme", assistant: "Assistant IA" },
+      tabs: { industry: "Industrie", tourism: "Tourisme", urban: "Urbanisation", assistant: "Assistant IA", quality: "Qualité & normes" },
+      u_title: "Là où les villes s'étendent et les villages s'allument",
+      u_lede: "La surface éclairée suit l'extension des villes, l'apparition de nouveaux quartiers et l'électrification des villages. Comparée à la croissance de la population, elle montre où l'équipement suit la démographie — et où il prend du retard.",
+      u_k1: "Croissance de la surface éclairée", u_k2: "Surface nouvellement éclairée", u_k3: "Habitants nouvellement éclairés", u_k4: "Validation (bâti GHSL)",
+      u_map: "Carte des zones nouvellement éclairées", u_map_help: "Doré : nouvelles implantations (zones non habitées au départ) · vert : électrification de zones déjà habitées · rouge : lumière perdue. Les unités sont colorées selon leur classe.",
+      u_series: "Surface éclairée et population", u_series_help: "Les deux séries valent 100 la première année : si la surface éclairée croît plus vite, l'équipement devance la démographie.",
+      u_scatter: "Lumière ou population : qui va plus vite ?", u_scatter_help: "Chaque point est une unité. Au-dessus de la diagonale : la surface éclairée croît plus vite que la population (urbanisation électrifiée) ; en dessous : croissance non éclairée.",
+      u_bars: "Zones nouvellement éclairées par région", u_bars_help: "Surface (km²) nouvellement éclairée, séparée entre électrification de zones habitées et nouvelles implantations ; en rouge, la lumière perdue.",
+      u_lit: "Surface éclairée", u_pop: "Population", u_settled: "Nouvelles implantations", u_electrified: "Électrification", u_lost: "Lumière perdue",
+      col_litg: "Surface éclairée (%/an)", col_popg: "Population (%/an)", col_new: "Nouvellement éclairé (km²)", col_builtg: "Bâti GHSL (%/an)",
+      q_title: "Qualité et normes internationales", q_eyebrow: "STATISTIQUES EXPÉRIMENTALES · ONU · DQAF · GSBPM · FAIR",
+      q_uc: "Fiches qualité des huit cas d'usage", q_val: "Validation", q_unc: "Incertitude", q_lim: "Limites", q_src: "Sources",
+      q_exp: "Statistique expérimentale", q_dqaf: "Cadre d'évaluation de la qualité des données (DQAF) du FMI", q_gsbpm: "Processus de production (GSBPM, CEE-ONU)",
+      q_fair: "Principes FAIR", q_un: "Principes fondamentaux de la statistique officielle (ONU)", q_dim: "Dimension", q_pr: "Pratique", q_ev: "Mise en œuvre",
+      q_sections: "sections du notebook", q_refs: "Références", q_whatexp: "Ce qui est expérimental",
       conf: "confiance", source: "Source", na: "Donnée non disponible pour ce pays.",
       // industry
       i_title: "Où l'industrie éclaire la nuit",
@@ -50,7 +64,21 @@
       a_local_head: "Voici les résultats les plus pertinents (mode sans modèle de langage) :", a_local_none: "Je ne trouve aucun résultat publié correspondant à cette question.",
     },
     en: {
-      tabs: { industry: "Industry", tourism: "Tourism", assistant: "AI assistant" },
+      tabs: { industry: "Industry", tourism: "Tourism", urban: "Urbanisation", assistant: "AI assistant", quality: "Quality & standards" },
+      u_title: "Where cities spread and villages light up",
+      u_lede: "The lit area follows the spread of cities, new neighbourhoods and village electrification. Compared with population growth, it shows where infrastructure keeps pace with demography — and where it lags behind.",
+      u_k1: "Growth of the lit area", u_k2: "Newly lit area", u_k3: "Newly lit inhabitants", u_k4: "Validation (GHSL built-up)",
+      u_map: "Map of newly lit areas", u_map_help: "Gold: new settlements (areas not inhabited at the start) · green: electrification of already inhabited areas · red: light lost. Units are coloured by class.",
+      u_series: "Lit area and population", u_series_help: "Both series equal 100 in the first year: if the lit area grows faster, infrastructure runs ahead of demography.",
+      u_scatter: "Light or population: which grows faster?", u_scatter_help: "Each dot is a unit. Above the diagonal: the lit area grows faster than population (electrified urbanisation); below: unlit growth.",
+      u_bars: "Newly lit areas by region", u_bars_help: "Newly lit area (km²), split between electrification of inhabited areas and new settlements; in red, light lost.",
+      u_lit: "Lit area", u_pop: "Population", u_settled: "New settlements", u_electrified: "Electrification", u_lost: "Light lost",
+      col_litg: "Lit area (%/yr)", col_popg: "Population (%/yr)", col_new: "Newly lit (km²)", col_builtg: "GHSL built-up (%/yr)",
+      q_title: "Quality and international standards", q_eyebrow: "EXPERIMENTAL STATISTICS · UN · DQAF · GSBPM · FAIR",
+      q_uc: "Quality sheets of the eight use cases", q_val: "Validation", q_unc: "Uncertainty", q_lim: "Limitations", q_src: "Sources",
+      q_exp: "Experimental statistic", q_dqaf: "IMF Data Quality Assessment Framework (DQAF)", q_gsbpm: "Statistical production process (UNECE GSBPM)",
+      q_fair: "FAIR principles", q_un: "UN Fundamental Principles of Official Statistics", q_dim: "Dimension", q_pr: "Practice", q_ev: "Implementation",
+      q_sections: "notebook sections", q_refs: "References", q_whatexp: "What is experimental",
       conf: "confidence", source: "Source", na: "Not available for this country.",
       i_title: "Where industry lights up the night",
       i_lede: "Light alone cannot tell a factory from a shopping centre. Each VIIRS pixel (≈ 0.2 km²) is scored on six independent satellite signals; pixels meeting at least three form clusters, classified by type and confidence level.",
@@ -123,6 +151,22 @@
       <div class="grid two">${card("t-rank", TX.t_rank, TX.t_rank_help, "chart tall", LANG === "fr" ? "VIIRS DNB mensuel" : "VIIRS DNB monthly")}
         <article class="card map-card"><h2>${esc(TX.t_map)}</h2><div class="map-wrap small"><div id="t-map" class="map"></div><div class="map-legend" id="t-legend"></div></div></article></div>
       <article class="card flush"><div class="table-wrap" id="t-table"></div></article>`,
+    urban: `
+      <div class="hero hero-urb"><div><div class="hero-eyebrow">${LANG === "fr" ? "CAS D'USAGE 8 · URBANISATION" : "USE CASE 8 · URBANISATION"}</div><h2>${esc(TX.u_title)}</h2><p>${esc(TX.u_lede)}</p></div></div>
+      <div class="kpis" id="u-kpis"></div>
+      <article class="card map-card"><h2>${esc(TX.u_map)}</h2><p class="help">${esc(TX.u_map_help)}</p>
+        <div class="map-wrap small"><div id="u-map" class="map"></div><div class="map-legend" id="u-legend"></div></div>
+        <p class="source">${esc(TX.source)} : VIIRS VNL V2 (NOAA/EOG) ; GHSL GHS-POP, GHS-BUILT-S R2023A ; © OpenStreetMap / CARTO.</p></article>
+      <div class="grid two">${card("u-series", TX.u_series, TX.u_series_help, "chart", "VIIRS VNL V2 ; GHSL / WorldPop")}${card("u-scatter", TX.u_scatter, TX.u_scatter_help, "chart", "VIIRS VNL V2 ; GHSL / WorldPop")}</div>
+      ${card("u-bars", TX.u_bars, TX.u_bars_help, "chart tall", "VIIRS VNL V2 ; GHSL")}
+      <article class="card flush"><div class="table-wrap" id="u-table"></div></article>`,
+    quality: `
+      <div class="hero hero-q"><div><div class="hero-eyebrow">${esc(TX.q_eyebrow)}</div><h2>${esc(TX.q_title)}</h2><p id="q-statement"></p></div><div class="q-seal" aria-hidden="true">✓</div></div>
+      <h2 class="q-h">${esc(TX.q_uc)}</h2><div class="q-grid" id="q-cards"></div>
+      <div class="grid two"><article class="card"><h2>${esc(TX.q_gsbpm)}</h2><ol class="q-steps" id="q-gsbpm"></ol></article>
+        <article class="card"><h2>${esc(TX.q_fair)}</h2><div class="q-fair" id="q-fair"></div><h3>${esc(TX.q_whatexp)}</h3><ul id="q-exp"></ul></article></div>
+      <article class="card"><h2>${esc(TX.q_dqaf)}</h2><div class="table-wrap" id="q-dqaf"></div></article>
+      <article class="card"><h2>${esc(TX.q_un)}</h2><div class="q-un" id="q-un"></div><h3>${esc(TX.q_refs)}</h3><ul class="small" id="q-refs"></ul></article>`,
     assistant: `
       <div class="hero hero-ai"><div><div class="hero-eyebrow">${LANG === "fr" ? "INTELLIGENCE ARTIFICIELLE · GROQ · GEMINI · OLLAMA" : "ARTIFICIAL INTELLIGENCE · GROQ · GEMINI · OLLAMA"}</div><h2>${esc(TX.a_title)}</h2><p>${esc(TX.a_lede)}</p></div><div class="ai-orb" aria-hidden="true"></div></div>
       <div class="ai-grid">
@@ -157,7 +201,7 @@
       kpi(TX.i_k1, F.num(I.n), Object.entries(I.counts).map(([t, n]) => `${(I.type_labels || {})[t] || t} ${n}`).join(" · ")),
       kpi(TX.i_k2, fmtPct(I.share_last, 1, false), String(y1)),
       kpi(TX.i_k3, fmtPct((I.trend || {}).growth, 1), `${yrs[0]}–${y1}`),
-      kpi(TX.i_k4, v.available ? `${fmtPct(v.precision, 0, false)} / ${fmtPct(v.recall, 0, false)}` : "–", v.available ? `${TX.i_k4s} (${v.source || ""})` : TX.i_novalid),
+      kpi(TX.i_k4, v.available ? `${fmtPct(v.precision, 0, false)} / ${fmtPct(v.recall, 0, false)}` : "–", v.available ? (v.partial ? (LANG === "fr" ? `rappel sur ${v.n_reference} centrales — référence partielle (${v.source || ""})` : `recall on ${v.n_reference} power plants — partial reference (${v.source || ""})`) : `${TX.i_k4s} (${v.source || ""})`) : TX.i_novalid),
     ].join("");
     // map
     const types = Object.keys(I.type_labels || {});
@@ -224,7 +268,7 @@
       kpi(TX.t_k1, `${T.n_tourist} / ${T.n_units}`, `${T.level} · ${LANG === "fr" ? "pointe" : "peak"} ${T.params.peak_months.map((m) => T.months[m - 1]).join("–")}`),
       kpi(TX.t_k2, tz.length ? fmtPct(tz[0].net_gain, 0) : "–", tz.length ? tz[0].name : ""),
       kpi(TX.t_k3, isNum(last.index) ? F.num(last.index) : "–", last.year ? `${last.year} (base ${last.base_year} = 100)` : ""),
-      kpi(TX.t_k4, v.available ? F.num2(v.corr) : "–", v.available ? `${v.variable}, ${v.n} ${LANG === "fr" ? "années" : "years"}` : ""),
+      kpi(TX.t_k4, v.available ? F.num2(v.corr) : "–", v.available ? `${v.label || v.variable}, ${v.n} ${LANG === "fr" ? "années" : "years"}` : ""),
     ].join("");
     const pr = T.profile || [];
     plot("t-prof", pr.length ? [
@@ -235,7 +279,7 @@
     const nb = vt.find((r) => r.year === (idx[0] || {}).base_year) || vt[0];
     const tr = [{ x: idx.map((r) => r.year), y: idx.map((r) => r.index), type: "bar", name: TX.t_idx, marker: { color: c.s[3], line: { width: 0 } },
       text: idx.map((r) => (r.ramadan_days >= 10 ? "☾" : "")), textposition: "outside", hovertemplate: "%{x} · %{y:.0f}<extra></extra>" }];
-    if (vt.length && nb) tr.push({ x: vt.map((r) => r.year), y: vt.map((r) => (100 * r[v.variable]) / nb[v.variable]), name: TX.t_nights, mode: "lines+markers", line: { color: c.ink2, width: 2, dash: "dot" }, marker: { size: 8 } });
+    if (vt.length && nb) tr.push({ x: vt.map((r) => r.year), y: vt.map((r) => (100 * r[v.variable]) / nb[v.variable]), name: v.variable === "nights_millions" ? TX.t_nights : `${v.label || v.variable} (${LANG === "fr" ? "même base" : "same base"})`, mode: "lines+markers", line: { color: c.ink2, width: 2, dash: "dot" }, marker: { size: 8 } });
     plot("t-idx", tr, { yaxis: { title: { text: TX.idx } }, bargap: 0.25 });
     const rk = u.slice(0, 25).reverse();
     plot("t-rank", [{ type: "bar", orientation: "h", y: rk.map((r) => r.name), x: rk.map((r) => 100 * r.net_gain), marker: { color: rk.map((r) => (r.class === "tourist" ? c.s[3] : c.flat)) },
@@ -253,6 +297,76 @@
     }
     $("#t-table").innerHTML = `<table class="data"><thead><tr><th>${TX.col_region}</th><th>${TX.col_net}</th><th>${TX.col_p}</th><th>${TX.col_summers}</th><th>${TX.col_class}</th><th>${TX.conf}</th></tr></thead><tbody>` +
       u.map((r) => `<tr><td>${esc(r.name)}</td><td>${fmtPct(r.net_gain, 1)}</td><td>${!isNum(r.p_value) ? "–" : r.p_value < 0.001 ? "< " + F.num(0.001, 3) : F.num(r.p_value, 3)}</td><td>${r.n_summers}</td><td>${esc(r.class_label)}</td><td><span class="badge ${esc(r.confidence)}">${esc(r.confidence)}</span></td></tr>`).join("") + "</tbody></table>";
+  }
+
+  /* ------------------------------------------------------------------ urbanisation (use case 8) */
+  function renderUrban() {
+    const U = dd("urban");
+    if (!U || !U.available) { $("#u-kpis").innerHTML = `<p class="help">${esc(TX.na)}</p>`; return; }
+    const c = C(), lv = U.level, units = (U.units || {})[lv] || [], adm1 = (U.units || {}).ADM1 || [], tr = U.trend || {}, tot = U.totals || {}, v = U.validation || {};
+    const ccol = U.class_colors || {}, clab = U.class_labels || {};
+    $("#u-kpis").innerHTML = [
+      kpi(TX.u_k1, fmtPct((tr.lit || {}).growth, 1), `${TX.u_pop} ${fmtPct((tr.pop || {}).growth, 1)} / ${LANG === "fr" ? "an" : "yr"}`),
+      kpi(TX.u_k2, isNum(tot.new_lit_km2) ? F.num(tot.new_lit_km2) + " km²" : "–", tot.y0 ? `${tot.y0} → ${tot.y1}` : ""),
+      kpi(TX.u_k3, isNum(tot.electrified_pop) ? F.people(tot.electrified_pop) : "–", `${TX.u_electrified} · ${isNum(tot.electrified_km2) ? F.num(tot.electrified_km2) + " km²" : ""}`),
+      kpi(TX.u_k4, v.available ? F.num2(v.rho) : "–", v.available ? `Spearman ρ · ${v.n} ${LANG === "fr" ? "unités" : "units"}` : TX.i_novalid),
+    ].join("");
+    const S0 = U.series || [];
+    if (S0.length) {
+      const b = S0[0];
+      plot("u-series", [
+        { x: S0.map((r) => r.year), y: S0.map((r) => (100 * r.lit_km2) / b.lit_km2), name: TX.u_lit, mode: "lines+markers", line: { color: c.s[3] || "#eda100", width: 2.5 }, marker: { size: 7 } },
+        { x: S0.map((r) => r.year), y: S0.map((r) => (100 * r.pop) / b.pop), name: TX.u_pop, mode: "lines+markers", line: { color: c.ink2, width: 2, dash: "dot" }, marker: { size: 7 } },
+      ], { yaxis: { title: { text: TX.idx } }, xaxis: { dtick: 2 } });
+    }
+    const pts = units.filter((u) => isNum(u.lit_growth) && isNum(u.pop_growth));
+    const lim = Math.max(0.02, ...pts.map((u) => Math.max(Math.abs(u.lit_growth), Math.abs(u.pop_growth)))) * 100 * 1.12;
+    const classes = ["electrified", "balanced", "unlit", "stable"];
+    plot("u-scatter", classes.map((k) => { const d = pts.filter((u) => u.class === k); return { x: d.map((u) => 100 * u.pop_growth), y: d.map((u) => 100 * u.lit_growth), text: d.map((u) => u.name),
+      mode: "markers", type: "scatter", name: clab[k] || k, marker: { color: ccol[k], size: 11, line: { color: c.surface, width: 1.5 } }, hovertemplate: "%{text}<br>" + TX.u_pop + " %{x:.1f} %/an<br>" + TX.u_lit + " %{y:.1f} %/an<extra></extra>" }; }),
+      { xaxis: { title: { text: TX.col_popg }, range: [-lim, lim], zeroline: true, zerolinecolor: c.axis }, yaxis: { title: { text: TX.col_litg }, range: [-lim, lim], zeroline: true, zerolinecolor: c.axis },
+        shapes: [{ type: "line", x0: -lim, y0: -lim, x1: lim, y1: lim, line: { color: c.ink2, dash: "dot", width: 1.2 } }], legend: { y: 1.18 } });
+    const bars = adm1.length ? adm1 : units;
+    const ord = bars.slice().sort((a, b) => (b.new_lit_km2 || 0) - (a.new_lit_km2 || 0)).reverse();
+    plot("u-bars", [
+      { type: "bar", orientation: "h", y: ord.map((u) => u.name), x: ord.map((u) => u.electrified_km2 || 0), name: TX.u_electrified, marker: { color: "#19c37d" } },
+      { type: "bar", orientation: "h", y: ord.map((u) => u.name), x: ord.map((u) => u.settled_km2 || 0), name: TX.u_settled, marker: { color: "#f5c242" } },
+      { type: "bar", orientation: "h", y: ord.map((u) => u.name), x: ord.map((u) => -(u.lost_lit_km2 || 0)), name: TX.u_lost, marker: { color: "#e34948" } },
+    ], { barmode: "relative", margin: { l: 130 }, xaxis: { title: { text: "km²" } }, legend: { y: 1.12 } });
+    if (window.L) {
+      const mp = freshMap("u-map"), gj = dd(lv === "ADM2" ? "adm2" : "adm1"), by = Object.fromEntries(units.map((u) => [u.unit_id, u]));
+      if (gj) L.geoJSON(gj, { style: (f) => { const u = by[f.properties.unit_id] || {}; return { color: "rgba(255,255,255,.75)", weight: 0.8, fillColor: ccol[u.class] || css("--surface-2"), fillOpacity: 0.28 }; },
+        onEachFeature: (f, lyr) => { const u = by[f.properties.unit_id] || {}; lyr.bindTooltip(`<b>${esc(u.name || f.properties.name)}</b><br>${esc(u.class_label || "")}<br>${TX.u_lit} ${fmtPct(u.lit_growth, 1)}/an · ${TX.u_pop} ${fmtPct(u.pop_growth, 1)}/an${isNum(u.new_lit_km2) ? `<br>${TX.col_new} : ${F.num(u.new_lit_km2)}` : ""}`); } }).addTo(mp);
+      const R = (dd("meta").rasters || {}).urban || {}; const f = Object.values(R)[0];
+      const ov = f ? overlay(f) : null; if (ov) ov.addTo(mp);
+      $("#u-legend").innerHTML = [["#f5c242", TX.u_settled], ["#19c37d", TX.u_electrified], ["#e34948", TX.u_lost]].map(([k, t]) => `<div><span class="sw" style="background:${k}"></span>${esc(t)}</div>`).join("") +
+        classes.map((k) => `<div><span class="sw" style="background:${ccol[k]};opacity:.55"></span>${esc(clab[k] || k)}</div>`).join("");
+    }
+    $("#u-table").innerHTML = `<table class="data"><thead><tr><th>${TX.col_region}</th><th>${TX.col_class}</th><th>${TX.col_litg}</th><th>${TX.col_popg}</th><th>${TX.col_new}</th><th>${TX.col_builtg}</th></tr></thead><tbody>` +
+      units.slice().sort((a, b) => (b.lit_growth || -9) - (a.lit_growth || -9)).map((u) => `<tr><td>${esc(u.name)}</td><td><span class="sw" style="background:${ccol[u.class]}"></span> ${esc(u.class_label)}</td><td>${fmtPct(u.lit_growth, 1)}</td><td>${fmtPct(u.pop_growth, 1)}</td><td>${isNum(u.new_lit_km2) ? F.num(u.new_lit_km2) : "–"}</td><td>${fmtPct(u.built_growth, 1)}</td></tr>`).join("") + "</tbody></table>";
+  }
+
+  /* ------------------------------------------------------------------ quality */
+  const UCI = { 1: "📈", 2: "🗺️", 3: "💰", 4: "⚡", 5: "⚖️", 6: "🏭", 7: "🏖️" };
+  function renderQuality() {
+    const Q = dd("quality"); const el = document.getElementById("page-quality");
+    if (!Q) { el.querySelector("#q-cards").innerHTML = `<p class="help">${esc(TX.na)}</p>`; return; }
+    el.querySelector("#q-statement").textContent = Q.statement || "";
+    el.querySelector("#q-cards").innerHTML = (Q.use_cases || []).map((u) => `
+      <article class="card q-card"><div class="q-top"><span class="uc-n">${u.uc}</span><span class="q-ic" aria-hidden="true">${UCI[u.uc] || ""}</span>
+        <span class="q-pill">${esc(TX.q_exp)}</span>${u.confidence ? `<span class="badge ${esc(u.confidence)}">${esc(TX.conf)} ${esc(u.confidence)}</span>` : ""}</div>
+        <h3><a href="#${esc(u.page)}">${esc(u.title)}</a></h3><p class="q-q">${esc(u.question)}</p>
+        <div class="q-val"><div class="q-k">${esc(TX.q_val)}</div><div class="q-v">${esc((u.validation || {}).value)}</div><div class="q-m">${esc((u.validation || {}).metric)} · ${esc((u.validation || {}).text)}</div></div>
+        <p class="small"><b>${esc(TX.q_unc)}</b> — ${esc(u.uncertainty)}</p>
+        <details class="small"><summary>${esc(TX.q_lim)} · ${esc(TX.q_src)}</summary><p>${esc(u.limits)}</p><div class="q-chips">${(u.sources || []).map((x) => `<span class="q-chip">${esc(x)}</span>`).join("")}</div><p class="help small">${esc(u.method)}</p></details>
+      </article>`).join("");
+    el.querySelector("#q-gsbpm").innerHTML = (Q.gsbpm || []).map((g) => `<li><b>${esc(g.phase)}</b><span class="q-sec">${esc(TX.q_sections)} ${esc(g.notebook_sections)}</span><small>${esc(g.what)}</small></li>`).join("");
+    el.querySelector("#q-fair").innerHTML = (Q.fair || []).map((f) => `<div><b>${esc(f.principle.slice(0, 1))}</b><div><strong>${esc(f.principle)}</strong><p class="small">${esc(f.how)}</p></div></div>`).join("");
+    el.querySelector("#q-exp").innerHTML = (Q.experimental || []).map((x) => `<li>${esc(x)}</li>`).join("");
+    el.querySelector("#q-dqaf").innerHTML = `<table><thead><tr><th>${esc(TX.q_dim)}</th><th>${esc(TX.q_pr)}</th><th>${esc(TX.q_ev)}</th></tr></thead><tbody>` +
+      (Q.dqaf || []).map((d) => `<tr><td><b>${esc(d.dimension)}</b></td><td>${esc(d.practice)}</td><td>${esc(d.evidence)}</td></tr>`).join("") + "</tbody></table>";
+    el.querySelector("#q-un").innerHTML = (Q.un_principles || []).map((p, i) => `<div><span class="q-num">${i + 1}</span><div><strong>${esc(p.principle)}</strong><p class="small">${esc(p.how)}</p></div></div>`).join("");
+    el.querySelector("#q-refs").innerHTML = (Q.references || []).map((r) => `<li>${esc(r)}</li>`).join("");
   }
 
   /* ------------------------------------------------------------------ assistant */
@@ -279,8 +393,8 @@
   function systemPrompt(facts) {
     const c = AI.ctx, fr = LANG === "fr";
     const head = fr
-      ? `Tu es l'assistant analytique du tableau de bord « Lumières nocturnes et activité économique » pour ${c.country} (${c.period.join("–")}), produit par la Banque africaine de développement et le Centre Big Data du FMI.\nRÈGLES IMPÉRATIVES :\n1. Réponds UNIQUEMENT à partir des FAITS fournis. N'invente aucun chiffre, aucune région, aucune date.\n2. Cite chaque affirmation chiffrée avec l'identifiant du fait entre crochets, par exemple [F12].\n3. Indique le niveau de confiance lorsqu'il est donné et rappelle une limite utile.\n4. Si les faits ne permettent pas de répondre, dis-le et indique quelle page consulter.\n5. Ne présente jamais une estimation comme une statistique officielle.\n6. Réponds dans la langue de la question, de façon concise : 3 à 8 phrases ou une courte liste, chiffres clés en **gras**.\n${c.synthetic ? "ATTENTION : données SYNTHÉTIQUES (pays test) ; rappelle-le.\n" : ""}`
-      : `You are the analytical assistant of the "Night-time lights and economic activity" dashboard for ${c.country} (${c.period.join("–")}), produced by the African Development Bank and the IMF Big Data Center.\nMANDATORY RULES:\n1. Answer ONLY from the FACTS provided. Never invent a figure, a region or a date.\n2. Cite every quantitative statement with the fact identifier in square brackets, e.g. [F12].\n3. State the confidence level when given and mention a relevant limitation.\n4. If the facts do not answer the question, say so and point to the page to consult.\n5. Never present an estimate as an official statistic.\n6. Answer in the language of the question, concisely: 3 to 8 sentences or a short list, key figures in **bold**.\n${c.synthetic ? "WARNING: SYNTHETIC data (test country); say so.\n" : ""}`;
+      ? `Tu es l'assistant analytique du tableau de bord « Lumières nocturnes : huit cas d'usage » pour ${c.country} (${c.period.join("–")}), produit par la Banque africaine de développement et le Centre Big Data du FMI.\nRÈGLES IMPÉRATIVES :\n1. Réponds UNIQUEMENT à partir des FAITS fournis. N'invente aucun chiffre, aucune région, aucune date.\n2. Cite chaque affirmation chiffrée avec l'identifiant du fait entre crochets, par exemple [F12].\n3. Indique le niveau de confiance lorsqu'il est donné et rappelle une limite utile.\n4. Si les faits ne permettent pas de répondre, dis-le et indique quelle page consulter.\n5. Ne présente jamais une estimation comme une statistique officielle.\n6. Réponds dans la langue de la question, de façon concise : 3 à 8 phrases ou une courte liste, chiffres clés en **gras**.\n${c.synthetic ? "ATTENTION : données SYNTHÉTIQUES (pays test) ; rappelle-le.\n" : ""}`
+      : `You are the analytical assistant of the "Night-time lights: eight use cases" dashboard for ${c.country} (${c.period.join("–")}), produced by the African Development Bank and the IMF Big Data Center.\nMANDATORY RULES:\n1. Answer ONLY from the FACTS provided. Never invent a figure, a region or a date.\n2. Cite every quantitative statement with the fact identifier in square brackets, e.g. [F12].\n3. State the confidence level when given and mention a relevant limitation.\n4. If the facts do not answer the question, say so and point to the page to consult.\n5. Never present an estimate as an official statistic.\n6. Answer in the language of the question, concisely: 3 to 8 sentences or a short list, key figures in **bold**.\n${c.synthetic ? "WARNING: SYNTHETIC data (test country); say so.\n" : ""}`;
     return head + (fr ? "FAITS :\n" : "FACTS:\n") + facts.map((f) => `[${f.id}] (${(c.uc_labels || {})[f.uc] || ""}) ${f.title} : ${f.text}`).join("\n");
   }
   const keyName = (p) => `ntl-ai-key-${p}`;
@@ -397,7 +511,7 @@
   function inject() {
     const q = (sel) => document.querySelector(sel);
     const nav = q(".tabs"), before = nav && nav.querySelector('[data-page="method"]');
-    ["industry", "tourism", "assistant"].forEach((p) => {
+    ["industry", "tourism", "urban", "assistant", "quality"].forEach((p) => {
       const a = document.createElement("a"); a.href = "#" + p; a.dataset.page = p; a.textContent = TX.tabs[p];
       if (p === "assistant") a.className = "tab-ai";
       if (before) nav.insertBefore(a, before); else if (nav) nav.appendChild(a);
@@ -408,12 +522,12 @@
       ? [["📈", "Dynamiques", "Tendance, saisonnalité, séries régionales", "time"], ["🗺️", "Régions", "Croissance, convergence, concentration", "regions"],
          ["💰", "PIB", "Élasticité, prévision immédiate, PIB régional", "time"], ["⚡", "Chocs", "COVID-19, ruptures, récupération", "shocks"],
          ["⚖️", "Inégalités", "Gini, Theil, populations dans le noir", "inequality"], ["🏭", "Industrie", "Grappes industrielles, six signaux", "industry"],
-         ["🏖️", "Tourisme", "Surcroît estival, indice de saison", "tourism"]]
+         ["🏖️", "Tourisme", "Surcroît estival, indice de saison", "tourism"], ["🏙️", "Urbanisation", "Extension éclairée, électrification", "urban"]]
       : [["📈", "Dynamics", "Trend, seasonality, regional series", "time"], ["🗺️", "Regions", "Growth, convergence, concentration", "regions"],
          ["💰", "GDP", "Elasticity, nowcast, regional GDP", "time"], ["⚡", "Shocks", "COVID-19, breaks, recovery", "shocks"],
          ["⚖️", "Inequality", "Gini, Theil, people in the dark", "inequality"], ["🏭", "Industry", "Industrial clusters, six signals", "industry"],
-         ["🏖️", "Tourism", "Summer excess, season index", "tourism"]];
-    const strip = document.createElement("nav"); strip.className = "uc-strip"; strip.setAttribute("aria-label", LANG === "fr" ? "Les sept cas d'usage" : "The seven use cases");
+         ["🏖️", "Tourism", "Summer excess, season index", "tourism"], ["🏙️", "Urbanisation", "Lit-area spread, electrification", "urban"]];
+    const strip = document.createElement("nav"); strip.className = "uc-strip"; strip.setAttribute("aria-label", LANG === "fr" ? "Les huit cas d'usage" : "The eight use cases");
     strip.innerHTML = UCS.map(([ic, t, d, pg], i) => `<a href="#${pg}" class="uc"><span class="uc-n">${i + 1}</span><span class="uc-ic" aria-hidden="true">${ic}</span><b>${t}</b><small>${d}</small></a>`).join("") +
       `<a href="#assistant" class="uc uc-ai"><span class="uc-ic" aria-hidden="true">✦</span><b>${LANG === "fr" ? "Assistant IA" : "AI assistant"}</b><small>Groq · Gemini · Ollama</small></a>`;
     const kp = q("#kpis"); if (kp) kp.parentNode.insertBefore(strip, kp.nextSibling);
@@ -425,11 +539,11 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", inject); else inject();
 
   window.NTL_EXT = {
-    pages: ["industry", "tourism", "assistant"],
-    files: { industry: "industry.json", tourism: "tourism.json", agent: "agent_context.json", iclusters: "industry_clusters.geojson" },
-    render: { industry: renderIndustry, tourism: renderTourism, assistant: renderAssistant },
+    pages: ["industry", "tourism", "urban", "assistant", "quality"],
+    files: { industry: "industry.json", tourism: "tourism.json", urban: "urban.json", agent: "agent_context.json", iclusters: "industry_clusters.geojson", quality: "quality.json" },
+    render: { industry: renderIndustry, tourism: renderTourism, urban: renderUrban, assistant: renderAssistant, quality: renderQuality },
     fileDesc: LANG === "fr"
-      ? { "industry.json": "Zones industrielles : grappes, types, séries, validation", "industry_clusters.geojson": "Polygones des grappes industrielles et leurs six signaux", "tourism.json": "Tourisme : surcroît estival, zones touristiques, indice de saison", "agent_context.json": "Faits numérotés utilisés par l'assistant IA" }
-      : { "industry.json": "Industrial zones: clusters, types, series, validation", "industry_clusters.geojson": "Industrial-cluster polygons and their six signals", "tourism.json": "Tourism: summer excess, tourist zones, season index", "agent_context.json": "Numbered facts used by the AI assistant" },
+      ? { "industry.json": "Zones industrielles : grappes, types, séries, validation", "industry_clusters.geojson": "Polygones des grappes industrielles et leurs six signaux", "tourism.json": "Tourisme : surcroît estival, zones touristiques, indice de saison", "agent_context.json": "Faits numérotés et outils de l'agent IA", "quality.json": "Fiches qualité, DQAF, GSBPM, FAIR (normes internationales)", "urban.json": "Urbanisation : surface éclairée, zones nouvellement éclairées, typologie, validation par le bâti" }
+      : { "industry.json": "Industrial zones: clusters, types, series, validation", "industry_clusters.geojson": "Industrial-cluster polygons and their six signals", "tourism.json": "Tourism: summer excess, tourist zones, season index", "agent_context.json": "Numbered facts and tools of the AI agent", "quality.json": "Quality sheets, DQAF, GSBPM, FAIR (international standards)", "urban.json": "Urbanisation: lit area, newly lit areas, typology, built-up validation" },
   };
 })();

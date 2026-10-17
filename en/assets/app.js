@@ -108,7 +108,7 @@ function renderHeader() {
     fl.src = `data/${S.iso}/flag.svg`;
   }
   $("#country-title").textContent = `${m.name} · ${m.period[0]}–${m.period[1]}`;
-  document.title = `${m.name} — night-time lights and economic activity`;
+  document.title = `${m.name} — night-time lights: 8 use cases`;
   $("#synthetic-banner").hidden = !m.synthetic;
   $("#foot").innerHTML = `Updated ${new Date(m.generated_at).toLocaleString("en-US")} · VIIRS data (NOAA/EOG, NASA), ` +
     `boundaries ${esc((m.boundaries && m.boundaries.ADM1) || "geoBoundaries")}, population ${esc(m.pop_source || "GHSL")}, ` +
@@ -134,7 +134,7 @@ Object.assign(RENDER, (window.NTL_EXT || {}).render || {});   // extension pages
 
 RENDER.overview = () => {
   const { meta, summary, monthly } = S.d;
-  $("#lede").textContent = `This dashboard measures economic activity in ${meta.name} using night-time lights observed by satellite. ` +
+  $("#lede").textContent = `This dashboard puts satellite night-time lights to work on eight use cases for ${meta.name}: economic dynamics, regional growth, GDP, shocks, inequality and electrification, industry, tourism and urbanisation. ` +
     `The more an area produces, trades and consumes electricity, the brighter it shines: light is an ` +
     `indirect indicator, available everywhere and every month, including where official statistics are lacking.`;
   $("#kpis").innerHTML = summary.kpis.map((k) => {
