@@ -3,7 +3,7 @@
 # Rapport qualité — Tunisie
 
 - **version** — 2.1.0
-- **generated** — 2026-10-17T13:53:09
+- **generated** — 2026-10-24T06:31:34
 - **country** — Tunisie
 - **period** — 2014, 2025
 
@@ -13,18 +13,18 @@
 |---|---|---|---|---|---|
 | 1 | Dynamiques temporelles | `experimental` | élevée | p-value = < 0,0001 — Significativité de la tendance (Mann–Kendall) et cohérence mensuel/annuel | VIIRS VCMSLCFG (monthly), VIIRS VNL V2 (annual), Harmonised DMSP–VIIRS (Li et al., 2020) |
 | 2 | Croissance régionale et convergence | `experimental` | moyenne | Spearman ρ = 0,10 — Corrélation de rang avec le NO₂ troposphérique (source indépendante) | VIIRS VNL V2, GHSL / WorldPop, Sentinel-5P NO₂ |
-| 3 | Relation lumières–PIB | `experimental` | moyenne | corrélation / EAM (points) = -0,31 / 2,9 — Suivi hors échantillon de la croissance officielle | VIIRS, PIB réel (Banque mondiale, WDI) |
+| 3 | Relation lumières–PIB | `experimental` |  | corrélation / EAM (points) = n.d. / n.d. — Suivi hors échantillon de la croissance officielle | VIIRS, PIB réel (Banque mondiale, WDI) |
 | 4 | Chocs et résilience | `experimental` | moyenne | creux (choc principal) = -9,0 % — oui — Le creux dépasse-t-il la variabilité ordinaire ? | VIIRS (monthly), Black Marble VNP46A2 (daily), catalogue d'événements |
-| 5 | Inégalités et électrification | `experimental` | moyenne | écart moyen (points) = -12,3 — Écart avec le taux d'accès à l'électricité de la Banque mondiale | VIIRS VNL V2, GHSL / WorldPop, GHSL SMOD, accès à l'électricité (WDI) |
-| 6 | Zones industrielles | `experimental` | faible | précision / rappel / F1 = non disponible — Comparaison avec la liste de référence (n.d.) | VIIRS VNL V2, GHSL BUILT-S, Sentinel-5P NO₂/SO₂, MODIS MOD11A2, OpenStreetMap |
-| 7 | Tourisme saisonnier | `experimental` | moyenne | r = 0,56 — Corrélation avec les arrivées de touristes internationaux (WDI) | VIIRS (monthly), nuitées ou arrivées WDI |
+| 5 | Inégalités et électrification | `experimental` | moyenne | écart moyen (points) = n.d. — Écart avec le taux d'accès à l'électricité de la Banque mondiale | VIIRS VNL V2, GHSL / WorldPop, GHSL SMOD, accès à l'électricité (WDI) |
+| 6 | Zones industrielles | `experimental` | faible | précision / rappel / F1 = 65 % / 23 % / 0,33 — Comparaison avec la liste de référence (OpenStreetMap) | VIIRS VNL V2, GHSL BUILT-S, Sentinel-5P NO₂/SO₂, MODIS MOD11A2, OpenStreetMap |
+| 7 | Tourisme saisonnier | `experimental` | faible | r = non disponible — Corrélation avec les nuitées | VIIRS (monthly), nuitées ou arrivées WDI |
 | 8 | Signaux d'urbanisation | `experimental` | faible | Spearman ρ = 0,34 — Corrélation de rang avec la croissance de la surface bâtie GHSL (source indépendante) | VIIRS VNL V2, GHSL GHS-POP / WorldPop, GHSL GHS-BUILT-S R2023A, population urbaine (WDI) |
 
-## DQAF du FMI
+## DQAF
 
 | Dimension | Practice | Evidence |
 |---|---|---|
-| 0. Conditions préalables | Cadre institutionnel, ressources, pertinence | Projet BAD × Centre Big Data du FMI ; données satellitaires gratuites ; questions de politique publique explicites pour chaque cas d'usage. |
+| 0. Conditions préalables | Cadre institutionnel, ressources, pertinence | Projet Banque africaine de développement × Data Innovation for Africa (DI4A) ; données satellitaires gratuites ; questions de politique publique explicites pour chaque cas d'usage. |
 | 1. Garanties d'intégrité | Professionnalisme, transparence, normes éthiques | Code ouvert, méthodes documentées, paramètres et versions consignés dans le manifeste ; aucune donnée individuelle ; publication sans intervention manuelle sur les chiffres. |
 | 2. Rigueur méthodologique | Concepts, champ, classifications, base d'enregistrement | Méthodes publiées dans la littérature (Henderson et al. 2012 ; Elvidge et al. 2021 ; Román et al. 2018) ; codes ISO 3166 ; limites geoBoundaries ; WGS 84. |
 | 3. Exactitude et fiabilité | Sources, évaluation, techniques statistiques, validation, révisions | Contrôle qualité (couverture nuageuse, torchères, aberrants) ; validation de chaque cas d'usage contre une source indépendante ; intervalles de confiance ; niveau de confiance publié. |
@@ -76,11 +76,11 @@
 ## references
 
 - United Nations (2014). Fundamental Principles of Official Statistics. A/RES/68/261.
-- IMF (2012). Data Quality Assessment Framework (DQAF) — generic framework.
+- Data Quality Assessment Framework (DQAF, 2012) — generic framework.
 - UNECE (2019). Generic Statistical Business Process Model, GSBPM v5.1.
 - Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data 3.
 - Eurostat (2021). Experimental statistics — European Statistical System guidelines.
 
 
 ---
-<sub>Généré par le notebook le 2026-10-17 · version 2.1.0</sub>
+<sub>Généré par le notebook le 2026-10-24 · version 2.1.0</sub>

@@ -154,7 +154,7 @@ OVERPASS_URLS = (
     "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
 )
 # Overpass rejects anonymous clients (HTTP 406 / 429): an identified User-Agent is required.
-OVERPASS_HEADERS = {"User-Agent": "ntl-economic-analysis/2.0 (AfDB x IMF night-lights training notebook)",
+OVERPASS_HEADERS = {"User-Agent": "ntl-economic-analysis/2.0 (AfDB x DI4A night-lights notebook)",
                     "Accept": "application/json", "Accept-Encoding": "gzip"}
 
 

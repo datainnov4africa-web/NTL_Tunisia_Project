@@ -13,7 +13,7 @@
   <a href="README.md"><img src="https://img.shields.io/badge/langues-FR%20%7C%20EN-F5C242" alt="FR | EN"></a>
   <a href="docs/methodology.fr.md"><img src="https://img.shields.io/badge/donn%C3%A9es-VIIRS%20%C2%B7%20Black%20Marble-0B121B?logo=nasa&logoColor=white" alt="VIIRS"></a>
   <a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/?country=TUN#assistant"><img src="https://img.shields.io/badge/agent%20IA-Groq%20%7C%20Gemini%20%7C%20Ollama-6E40C9" alt="Agent IA"></a>
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/mis%20%C3%A0%20jour-2026--10--17-555" alt="mis à jour"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/mis%20%C3%A0%20jour-2026--10--24-555" alt="mis à jour"></a>
 </p>
 
 <p align="center"><a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/"><img src="https://img.shields.io/badge/OUVRIR%20LE%20TABLEAU%20DE%20BORD-%E2%96%B6-00704A?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Ouvrir le tableau de bord" height="42"></a>&nbsp;&nbsp;<a href="https://colab.research.google.com/github/datainnov4africa-web/NTL_Tunisia_Project/blob/main/notebooks/NTL_8_use_cases_FR.ipynb"><img src="https://img.shields.io/badge/EX%C3%89CUTER%20LE%20NOTEBOOK%20DANS%20COLAB-%E2%96%B6-3F7FC7?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Exécuter le notebook dans Colab" height="42"></a></p>
@@ -39,7 +39,7 @@
 <tr>
 <td align="center" width="25%"><h3>+6,0 %</h3><b>Croissance annuelle de la lumière</b><br><sub>2014–2025, pente robuste (Theil–Sen)</sub></td>
 <td align="center" width="25%"><h3>+4,1 %</h3><b>12 derniers mois vs 12 précédents</b><br><sub>série désaisonnalisée, jusqu'à 12/2025</sub></td>
-<td align="center" width="25%"><h3>4,19</h3><b>Élasticité lumière–PIB</b><br><sub>IC 95 % 1,02 à 7,36 · confiance moyenne</sub></td>
+<td align="center" width="25%"><h3>—</h3><b>Élasticité lumière–PIB</b><br><sub>PIB indisponible</sub></td>
 <td align="center" width="25%"><h3>0,27</h3><b>Gini de la lumière par habitant</b><br><sub>unités ADM2, 2025</sub></td>
 </tr>
 <tr>
@@ -79,10 +79,9 @@
 </tr>
 <tr>
 <td width="50%" valign="top">
-<a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/?country=TUN#time"><img src="assets/fr/uc3.png" alt="Cas d'usage 3 — Relation lumières–PIB" width="100%"></a>
 <h3>💹 3 · Relation lumières–PIB</h3>
 <p><b>Question</b> — <i>Peut-on estimer la croissance avant sa publication, et le PIB régional ?</i></p>
-<p><b>Résultat</b> — L'élasticité de la lumière au PIB réel est de 4,19 en niveaux (IC 95 % : 1,02 à 7,36, R² = 0,54, 12 années) et de 0,25 en taux de croissance (IC : −0,06 à 0,56).</p>
+<p><b>Résultat</b> — Validation : Suivi hors échantillon de la croissance officielle (corrélation / EAM (points) = n.d. / n.d.). Incertitude : IC 95 % de l'élasticité : n.d. à n.d. ; intervalles de prévision 80 % et 95 %.</p>
 <p><a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/?country=TUN#time">Ouvrir la page →</a></p></td>
 <td width="50%" valign="top">
 <a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/?country=TUN#shocks"><img src="assets/fr/uc4.png" alt="Cas d'usage 4 — Chocs et résilience" width="100%"></a>
@@ -212,7 +211,7 @@ flowchart LR
 Méthodologie complète : [docs/methodology.fr.md](docs/methodology.fr.md) · rapport qualité : [docs/QUALITY.fr.md](docs/QUALITY.fr.md).
 
 - **Principes fondamentaux de la statistique officielle (ONU)** — pertinence, impartialité, normes professionnelles, transparence des sources et méthodes, accès ouvert aux résultats.
-- **Cadre d'évaluation de la qualité des données du FMI (DQAF)** — intégrité, rigueur méthodologique, exactitude et fiabilité, utilité, accessibilité.
+- **Cadre d'évaluation de la qualité des données (DQAF)** — intégrité, rigueur méthodologique, exactitude et fiabilité, utilité, accessibilité.
 - **GSBPM** — chaque section du notebook correspond à une phase du modèle générique du processus statistique.
 - **FAIR** — trouvable (URL stables, fichier de citation), accessible (formats ouverts), interopérable (CSV, JSON, GeoJSON), réutilisable (licence, provenance dans `manifest.json`).
 - **Statistiques expérimentales** — les estimations par les lumières complètent, sans jamais les remplacer, les statistiques officielles ; elles sont étiquetées *expérimentales*, avec leur incertitude.
@@ -222,11 +221,11 @@ Méthodologie complète : [docs/methodology.fr.md](docs/methodology.fr.md) · ra
 |---|---|---|---|
 | 📈 1 · Dynamiques temporelles | `Expérimental` | élevée | p-value = < 0,0001 |
 | 🗺️ 2 · Croissance régionale et convergence | `Expérimental` | moyenne | Spearman ρ = 0,10 |
-| 💹 3 · Relation lumières–PIB | `Expérimental` | moyenne | corrélation / EAM (points) = -0,31 / 2,9 |
+| 💹 3 · Relation lumières–PIB | `Expérimental` | None | corrélation / EAM (points) = n.d. / n.d. |
 | ⚡ 4 · Chocs et résilience | `Expérimental` | moyenne | creux (choc principal) = -9,0 % — oui |
-| ⚖️ 5 · Inégalités et électrification | `Expérimental` | moyenne | écart moyen (points) = -12,3 |
-| 🏭 6 · Zones industrielles | `Expérimental` | faible | précision / rappel / F1 = non disponible |
-| 🏖️ 7 · Tourisme saisonnier | `Expérimental` | moyenne | r = 0,56 |
+| ⚖️ 5 · Inégalités et électrification | `Expérimental` | moyenne | écart moyen (points) = n.d. |
+| 🏭 6 · Zones industrielles | `Expérimental` | faible | précision / rappel / F1 = 65 % / 23 % / 0,33 |
+| 🏖️ 7 · Tourisme saisonnier | `Expérimental` | faible | r = non disponible |
 | 🏙️ 8 · Signaux d'urbanisation | `Expérimental` | faible | Spearman ρ = 0,34 |
 
 
@@ -253,7 +252,7 @@ Méthodologie complète : [docs/methodology.fr.md](docs/methodology.fr.md) · ra
 ## 🔐 Sécurité
 
 - Les jetons et clés d'API ne sont **jamais** écrits sur disque, affichés, journalisés, versionnés ni publiés ; la publication passe par l'API REST GitHub avec un jeton en mémoire, et chaque message d'erreur est expurgé.
-- Utiliser un **jeton fine-grained** limité à ce dépôt, avec une date d'expiration ; le révoquer après l'atelier.
+- Utiliser un **jeton fine-grained** limité à ce dépôt, avec une date d'expiration ; le révoquer dès qu'il n'est plus utile.
 - Chaque fichier est analysé avant chaque envoi ; la publication est annulée si un motif de jeton est trouvé.
 - Le site est statique (ni serveur, ni base de données) ; l'assistant IA s'exécute dans le navigateur du visiteur.
 
@@ -264,7 +263,7 @@ Voir [`CITATION.cff`](CITATION.cff) (bouton *Cite this repository* de GitHub), o
 
 ```bibtex
 @software{ntl_tun_2026,
-  author  = {{African Development Bank} and {IMF Big Data Center}},
+  author  = {{African Development Bank} and {Data Innovation for Africa (DI4A)}},
   title   = {Night-time lights: eight use cases — Tunisie — statistics & public policy, public dashboard and AI agent},
   year    = {2026},
   version = {2.1.0},
@@ -275,13 +274,13 @@ Voir [`CITATION.cff`](CITATION.cff) (bouton *Cite this repository* de GitHub), o
 
 ## ⚖️ Licence
 
-Code : [MIT](LICENSE). Les données et images dérivées suivent la licence de chaque source (par exemple, les produits VIIRS de l'EOG, GHSL, WorldPop, geoBoundaries et les WDI de la Banque mondiale sont diffusés sous CC BY 4.0, OpenStreetMap sous ODbL) — consulter la licence de chaque source avant réutilisation.
+© AfDB-DI4A (Banque africaine de développement — Data Innovation for Africa). **Toute réutilisation des résultats, cartes, graphiques ou images doit mentionner la source : « Source : AfDB-DI4A ».** Code : [MIT](LICENSE). Les données et images dérivées suivent la licence de chaque source (par exemple, les produits VIIRS de l'EOG, GHSL, WorldPop, geoBoundaries et les WDI de la Banque mondiale sont diffusés sous CC BY 4.0, OpenStreetMap sous ODbL) — consulter la licence de chaque source avant réutilisation.
 
 
 ## 🙏 Remerciements
 
-Développé par la **Banque africaine de développement (BAD)** avec le **Centre Big Data du FMI** pour l'atelier *Big Data for Macroeconomic Statistics* accueilli par l'**Africa Training Institute (ATI)**, Maurice, 26–30 octobre 2026. Lumières nocturnes : Earth Observation Group (Payne Institute, Colorado School of Mines) et NASA Black Marble, traitées avec Google Earth Engine.
+Développé par la **Banque africaine de développement (BAD)** et **Data Innovation for Africa (DI4A)**. Lumières nocturnes : Earth Observation Group (Payne Institute, Colorado School of Mines) et NASA Black Marble, traitées avec Google Earth Engine.
 
 
 ---
-<p align="center"><sub>Généré par le notebook le 2026-10-17 · version 2.1.0 · <a href="https://github.com/datainnov4africa-web/NTL_Tunisia_Project">datainnov4africa-web/NTL_Tunisia_Project</a></sub></p>
+<p align="center"><sub>Généré par le notebook le 2026-10-24 · version 2.1.0 · <a href="https://github.com/datainnov4africa-web/NTL_Tunisia_Project">datainnov4africa-web/NTL_Tunisia_Project</a></sub></p>

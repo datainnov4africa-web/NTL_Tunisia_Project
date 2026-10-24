@@ -7,7 +7,7 @@ uncertainty, its limitations and a confidence level. The project is mapped onto 
 frameworks:
 
 * the **UN Fundamental Principles of Official Statistics** (UN General Assembly resolution 68/261, 2014);
-* the **IMF Data Quality Assessment Framework** (DQAF, 2012): prerequisites, integrity, methodological
+* the **Data Quality Assessment Framework** (DQAF, 2012): prerequisites, integrity, methodological
   soundness, accuracy and reliability, serviceability, accessibility;
 * the **Generic Statistical Business Process Model** (GSBPM 5.1, UNECE 2019): which notebook section
   implements which phase of statistical production;
@@ -234,7 +234,7 @@ def use_case_sheets(R: dict, cfg, messages=None) -> list[dict]:
 DQAF = {
     "fr": [
         ("0. Conditions préalables", "Cadre institutionnel, ressources, pertinence",
-         "Projet BAD × Centre Big Data du FMI ; données satellitaires gratuites ; questions de politique publique explicites pour chaque cas d'usage."),
+         "Projet Banque africaine de développement × Data Innovation for Africa (DI4A) ; données satellitaires gratuites ; questions de politique publique explicites pour chaque cas d'usage."),
         ("1. Garanties d'intégrité", "Professionnalisme, transparence, normes éthiques",
          "Code ouvert, méthodes documentées, paramètres et versions consignés dans le manifeste ; aucune donnée individuelle ; publication sans intervention manuelle sur les chiffres."),
         ("2. Rigueur méthodologique", "Concepts, champ, classifications, base d'enregistrement",
@@ -248,7 +248,7 @@ DQAF = {
     ],
     "en": [
         ("0. Prerequisites of quality", "Institutional environment, resources, relevance",
-         "AfDB × IMF Big Data Center project; free satellite data; explicit policy question for each use case."),
+         "African Development Bank × Data Innovation for Africa (DI4A) project; free satellite data; explicit policy question for each use case."),
         ("1. Assurances of integrity", "Professionalism, transparency, ethical standards",
          "Open code, documented methods, parameters and versions recorded in the manifest; no individual data; publication without manual intervention on figures."),
         ("2. Methodological soundness", "Concepts, scope, classification, basis for recording",
@@ -335,7 +335,7 @@ def build_quality(R: dict, cfg, out_dir: str | Path | None = None, messages=None
                          _t("Grappes industrielles et indice de saison touristique", "Industrial clusters and tourist season index")],
         "references": [
             "United Nations (2014). Fundamental Principles of Official Statistics. A/RES/68/261.",
-            "IMF (2012). Data Quality Assessment Framework (DQAF) — generic framework.",
+            "Data Quality Assessment Framework (DQAF, 2012) — generic framework.",
             "UNECE (2019). Generic Statistical Business Process Model, GSBPM v5.1.",
             "Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data 3.",
             "Eurostat (2021). Experimental statistics — European Statistical System guidelines.",
@@ -358,7 +358,7 @@ def quality_markdown(q: dict) -> str:
         v = u["validation"]
         L.append(f"| **{u['uc']}. {c(u['title'])}** | {c(v['text'])} ({c(v['metric'])}) | {c(v['value'])} | {c(u['uncertainty'])} | "
                  f"{_t('expérimental', 'experimental')} | {u.get('confidence') or '–'} |")
-    L += ["", f"**{_t('Cadre DQAF du FMI', 'IMF DQAF')}**", "", _t("| Dimension | Pratique | Mise en œuvre |", "| Dimension | Practice | Implementation |"), "|---|---|---|"]
+    L += ["", f"**{_t('Cadre DQAF', 'DQAF')}**", "", _t("| Dimension | Pratique | Mise en œuvre |", "| Dimension | Practice | Implementation |"), "|---|---|---|"]
     L += [f"| {c(d['dimension'])} | {c(d['practice'])} | {c(d['evidence'])} |" for d in q["dqaf"]]
     L += ["", f"**GSBPM**", "", _t("| Phase | Sections | Contenu |", "| Phase | Sections | Content |"), "|---|---|---|"]
     L += [f"| {c(g['phase'])} | {c(g['notebook_sections'])} | {c(g['what'])} |" for g in q["gsbpm"]]

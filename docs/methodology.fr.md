@@ -21,7 +21,7 @@ VIIRS DNB mensuel (VCMSLCFG) et annuel VNL V2, DMSP–VIIRS harmonisé, Black Ma
 **Résultats de cette exécution**
 
 - `F02` Entre 2014 et 2025, la lumière nocturne de Tunisie a évolué de +6,0 % par an (IC 95 % : +5,0 % à +6,5 %). Sur les 12 derniers mois, le niveau désaisonnalisé est +4,1 % par rapport aux 12 mois précédents. (confiance élevée : tendance significative (p < 0,01 ; n = 12))
-- `F84` Validation : Significativité de la tendance (Mann–Kendall) et cohérence mensuel/annuel (p-value = < 0,0001). Incertitude : IC 95 % de la croissance annuelle : +5,0 % à +6,5 % Limites : Couverture nuageuse et nuits courtes en été ; la lumière n'est pas la valeur ajoutée. Statut : statistique expérimentale ; confiance élevée.
+- `F76` Validation : Significativité de la tendance (Mann–Kendall) et cohérence mensuel/annuel (p-value = < 0,0001). Incertitude : IC 95 % de la croissance annuelle : +5,0 % à +6,5 % Limites : Couverture nuageuse et nuits courtes en été ; la lumière n'est pas la valeur ajoutée. Statut : statistique expérimentale ; confiance élevée.
 
 ## 🗺️ Cas d'usage 2 — Croissance régionale et convergence
 
@@ -39,27 +39,24 @@ VIIRS DNB mensuel (VCMSLCFG) et annuel VNL V2, DMSP–VIIRS harmonisé, Black Ma
 
 - `F03` Sur 264 unités ADM2, 239 sont en croissance significative, 23 stagnent et 2 déclinent. L'activité lumineuse reste concentrée : Sfax concentre 10 % de la lumière nationale. (confiance moyenne : classement sur 264 unités, seuil ±1 %/an et p < 0,10)
 - `F04` Entre unités ADM2, la lumière par habitant converge : les unités les moins éclairées rattrapent leur retard. (confiance moyenne : β = −0,014 [−0,026 ; −0,003], n = 264)
-- `F24` Sfax (ADM1, 2025) : part de la lumière nationale 9,7 %, croissance annuelle +6,3 % (IC +5,8 % à +6,9 %, classe Croissance), lumière par habitant 0,967, population 0,06 M, dans le noir 6 %, PIB estimé (expérimental) 4,90 Md USD.
-- `F25` Nabeul (ADM1, 2025) : part de la lumière nationale 8,5 %, croissance annuelle +4,7 % (IC +4,0 % à +5,2 %, classe Croissance), lumière par habitant 1,023, population 0,05 M, dans le noir 2 %, PIB estimé (expérimental) 4,29 Md USD.
+- `F23` Sfax (ADM1, 2025) : part de la lumière nationale 9,7 %, croissance annuelle +6,3 % (IC +5,8 % à +6,9 %, classe Croissance), lumière par habitant 0,967, population 0,06 M, dans le noir 6 %.
+- `F24` Nabeul (ADM1, 2025) : part de la lumière nationale 8,5 %, croissance annuelle +4,7 % (IC +4,0 % à +5,2 %, classe Croissance), lumière par habitant 1,023, population 0,05 M, dans le noir 2 %.
 
 ## 💹 Cas d'usage 3 — Relation lumières–PIB
 
 - **Question** — Peut-on estimer la croissance avant sa publication, et le PIB régional ?
 - **Données** — VIIRS, PIB réel (Banque mondiale, WDI)
 - **Méthode** — log(lumière) ~ log(PIB) en niveaux et en croissance, MCO avec écarts-types HAC ; prévision hors échantillon ; PIB régional = PIB national réparti au prorata de la lumière.
-- **Validation** — Suivi hors échantillon de la croissance officielle (**corrélation / EAM (points) = -0,31 / 2,9**)
-- **Incertitude** — IC 95 % de l'élasticité : 1,02 à 7,36 ; intervalles de prévision 80 % et 95 %.
+- **Validation** — Suivi hors échantillon de la croissance officielle (**corrélation / EAM (points) = n.d. / n.d.**)
+- **Incertitude** — IC 95 % de l'élasticité : n.d. à n.d. ; intervalles de prévision 80 % et 95 %.
 - **Limites** — Échantillon annuel court ; le PIB régional est une statistique expérimentale à confronter aux comptes régionaux.
-- **Statut** — `experimental` · Confiance: moyenne
+- **Statut** — `experimental`
 - **Références** — Henderson et al. (2012) AER ; Chen et Nordhaus (2011) PNAS ; Gibson et al. (2021) JDE.
 - **Page du tableau de bord** — [`#time`](https://datainnov4africa-web.github.io/NTL_Tunisia_Project/?country=TUN#time)
 
 **Résultats de cette exécution**
 
-- `F05` L'élasticité de la lumière au PIB réel est de 4,19 en niveaux (IC 95 % : 1,02 à 7,36, R² = 0,54, 12 années) et de 0,25 en taux de croissance (IC : −0,06 à 0,56). Hors échantillon, la croissance des lumières suit celle du PIB avec une corrélation de −0,31 (erreur absolue moyenne : 2,9 point de croissance). (confiance moyenne : n = 12, significatif mais IC large (6.34))
-- `F51` Élasticité lumières–PIB réel en niveaux : β = 4,19 (IC 95 % 1,02 à 7,36, R² = 0,54, n = 12, confiance moyenne : n = 12, significatif mais IC large (6.34)). +1 % de PIB ↔ +β % de lumière.
-- `F52` Élasticité lumières–PIB réel en taux de croissance : β = 0,25 (IC 95 % -0,06 à 0,56, R² = 0,05, n = 11, confiance faible : n = 11, non significatif (p = 0.11)). +1 % de PIB ↔ +β % de lumière.
-- `F53` Élasticité lumières–PIB réel en série longue DMSP–VIIRS : β = 1,06 (IC 95 % 0,87 à 1,25, R² = 0,89, n = 30, confiance élevée : n = 30, p < 0,01, IC étroit). +1 % de PIB ↔ +β % de lumière.
+- `F78` Validation : Suivi hors échantillon de la croissance officielle (corrélation / EAM (points) = n.d. / n.d.). Incertitude : IC 95 % de l'élasticité : n.d. à n.d. ; intervalles de prévision 80 % et 95 %. Limites : Échantillon annuel court ; le PIB régional est une statistique expérimentale à confronter aux comptes régionaux. Statut : statistique expérimentale ; confiance n.d..
 
 ## ⚡ Cas d'usage 4 — Chocs et résilience
 
@@ -75,17 +72,17 @@ VIIRS DNB mensuel (VCMSLCFG) et annuel VNL V2, DMSP–VIIRS harmonisé, Black Ma
 
 **Résultats de cette exécution**
 
-- `F06` Le choc le plus marqué dans la série désaisonnalisée est « COVID-19 » : creux de -9,0 % (11/2020), retour au niveau d'avant-choc après 10 mois. (confiance moyenne : creux comparé à la variabilité mensuelle d'avant-choc)
-- `F55` COVID-19 (2020-03-01 → 2021-06-30) : creux de -9,0 % le 2020-11-01, retour au niveau d'avant-choc après 10 mois. Distinct du bruit : oui.
-- `F56` Ruptures structurelles : 2020-03-01 (-7,6 %). Sans événement connu à ±6 mois : 0.
-- `F57` Régions les plus touchées (creux) : Tunis -23,2 % (covid19), Médenine -22,0 % (covid19), El Kef -20,2 % (covid19), Gabès -19,9 % (covid19), Béja -17,2 % (covid19).
+- `F05` Le choc le plus marqué dans la série désaisonnalisée est « COVID-19 » : creux de -9,0 % (11/2020), retour au niveau d'avant-choc après 10 mois. (confiance moyenne : creux comparé à la variabilité mensuelle d'avant-choc)
+- `F50` COVID-19 (2020-03-01 → 2021-06-30) : creux de -9,0 % le 2020-11-01, retour au niveau d'avant-choc après 10 mois. Distinct du bruit : oui.
+- `F51` Ruptures structurelles : 2020-03-01 (-7,6 %). Sans événement connu à ±6 mois : 0.
+- `F52` Régions les plus touchées (creux) : Tunis -23,2 % (covid19), Médenine -22,0 % (covid19), El Kef -20,2 % (covid19), Gabès -19,9 % (covid19), Béja -17,2 % (covid19).
 
 ## ⚖️ Cas d'usage 5 — Inégalités et électrification
 
 - **Question** — Où vivent les populations privées d'électricité ?
 - **Données** — VIIRS VNL V2, GHSL / WorldPop, GHSL SMOD, accès à l'électricité (WDI)
 - **Méthode** — Gini et Theil pondérés par la population ; population des pixels habités sous le seuil de détection ; sensibilité à trois seuils ; IC bootstrap de la variation du Gini.
-- **Validation** — Écart avec le taux d'accès à l'électricité de la Banque mondiale (**écart moyen (points) = -12,3**)
+- **Validation** — Écart avec le taux d'accès à l'électricité de la Banque mondiale (**écart moyen (points) = n.d.**)
 - **Incertitude** — Plage selon le seuil de radiance ; IC bootstrap du Gini.
 - **Limites** — Proxy de l'éclairage extérieur, pas du raccordement : un foyer raccordé mais peu éclairé paraît « dans le noir ».
 - **Statut** — `experimental` · Confiance: moyenne
@@ -94,17 +91,17 @@ VIIRS DNB mensuel (VCMSLCFG) et annuel VNL V2, DMSP–VIIRS harmonisé, Black Ma
 
 **Résultats de cette exécution**
 
-- `F07` Le Gini de la lumière par habitant (ADM2) vaut 0,27 en 2025 (évolution non significative depuis 2014). Environ 0,07 million(s) de personnes vivent dans des zones habitées sans lumière détectable (12 % de la population habitée). (confiance moyenne : sensible au seuil de radiance (de 0,07 à 0,07 M selon le seuil) ; proxy d'éclairage extérieur, pas de raccordement)
-- `F58` Gini de la lumière par habitant (ADM2) : 0,271 en 2014 → 0,272 en 2025 (variation 0,001, IC bootstrap -0,026 à 0,020). Theil T 0,127 ; part entre régions 37 %.
-- `F59` Habitants de zones habitées sans lumière détectable : 0,06 M (13 %) en 2014 → 0,07 M (12 %) en 2025. Rapport lumière/hab. urbain/rural 0,5. Proxy de l'accès à l'électricité, sensible au seuil.
-- `F60` Écart moyen entre la part de la population en zone éclairée et le taux d'accès à l'électricité de la Banque mondiale : -12,3 points.
+- `F06` Le Gini de la lumière par habitant (ADM2) vaut 0,27 en 2025 (évolution non significative depuis 2014). Environ 0,07 million(s) de personnes vivent dans des zones habitées sans lumière détectable (12 % de la population habitée). (confiance moyenne : sensible au seuil de radiance (de 0,07 à 0,07 M selon le seuil) ; proxy d'éclairage extérieur, pas de raccordement)
+- `F53` Gini de la lumière par habitant (ADM2) : 0,271 en 2014 → 0,272 en 2025 (variation 0,001, IC bootstrap -0,026 à 0,020). Theil T 0,127 ; part entre régions 37 %.
+- `F54` Habitants de zones habitées sans lumière détectable : 0,06 M (13 %) en 2014 → 0,07 M (12 %) en 2025. Rapport lumière/hab. urbain/rural 0,5. Proxy de l'accès à l'électricité, sensible au seuil.
+- `F80` Validation : Écart avec le taux d'accès à l'électricité de la Banque mondiale (écart moyen (points) = n.d.). Incertitude : Plage selon le seuil de radiance ; IC bootstrap du Gini. Limites : Proxy de l'éclairage extérieur, pas du raccordement : un foyer raccordé mais peu éclairé paraît « dans le noir ». Statut : statistique expérimentale ; confiance moyenne.
 
 ## 🏭 Cas d'usage 6 — Zones industrielles
 
 - **Question** — Où est l'industrie, et son activité progresse-t-elle ?
 - **Données** — VIIRS VNL V2, GHSL BUILT-S, Sentinel-5P NO₂/SO₂, MODIS MOD11A2, OpenStreetMap
 - **Méthode** — Concordance de six signaux par pixel (≥ 3 dont la lumière), grappes 8-connexes, typologie et confiance.
-- **Validation** — Comparaison avec la liste de référence (n.d.) (**précision / rappel / F1 = non disponible**)
+- **Validation** — Comparaison avec la liste de référence (OpenStreetMap) (**précision / rappel / F1 = 65 % / 23 % / 0,33**)
 - **Incertitude** — Confiance par grappe selon le nombre de signaux forts ; sites isolés à vérifier.
 - **Limites** — Résolution de Sentinel-5P (≈ 5 km) et MODIS (1 km) : les signaux qualifient un voisinage.
 - **Statut** — `experimental` · Confiance: faible
@@ -113,29 +110,29 @@ VIIRS DNB mensuel (VCMSLCFG) et annuel VNL V2, DMSP–VIIRS harmonisé, Black Ma
 
 **Résultats de cette exécution**
 
-- `F08` 125 grappes industrielles détectées par concordance de signaux satellitaires : 27 d'industrie lourde, 37 zones d'activités et de logistique, 30 sites d'hydrocarbures et 31 sites isolés à vérifier. Elles émettent 25,2 % de la lumière nationale (dernière année) ; leur lumière évolue de +2,8 % par an. Tunis concentre la plus forte activité industrielle. (confiance faible : aucune liste de référence pour valider la détection)
-- `F61` 125 grappes industrielles (≥ 3 signaux sur 6) : Zone d'activités et logistique 37, Site isolé à vérifier 31, Hydrocarbures et torchères 30, Industrie lourde 27. Part de la lumière nationale : 25,2 % ; croissance annuelle +2,8 %. Pas de validation disponible.
-- `F62` IND-001 — Hydrocarbures et torchères à Bab El Bhar (Tunis) (827.965 km², 3 signaux, confiance faible); IND-002 — Industrie lourde à Korba (Nabeul) (178.235 km², 4 signaux, confiance moyenne); IND-012 — Hydrocarbures et torchères à Gabes Medina (Gabès) (10.535 km², 3 signaux, confiance faible); IND-004 — Industrie lourde à Grombalia (Nabeul) (26.66 km², 4 signaux, confiance moyenne); IND-003 — Hydrocarbures et torchères à Bou Argoub (Nabeul) (27.95 km², 4 signaux, confiance moyenne); IND-008 — Site isolé à vérifier à Zaghouan (Zaghouan) (17.63 km², 3 signaux, confiance faible); IND-005 — Site isolé à vérifier à Sidi Bou Ali (Sousse) (23.865 km², 3 signaux, confiance faible); IND-007 — Site isolé à vérifier à Enfidha (Sousse) (18.92 km², 3 signaux, confiance faible); IND-013 — Site isolé à vérifier à Ez-Zeriba (Zaghouan) (9.89 km², 3 signaux, confiance faible); IND-009 — Site isolé à vérifier à Bir Mchergua (Zaghouan) (17.2 km², 3 signaux, confiance faible)
-- `F63` Tunis : 2 grappe(s) industrielle(s), 828,8 km², 216,2 % de la lumière de la région.
+- `F07` 125 grappes industrielles détectées par concordance de signaux satellitaires : 27 d'industrie lourde, 37 zones d'activités et de logistique, 30 sites d'hydrocarbures et 31 sites isolés à vérifier. Elles émettent 25,2 % de la lumière nationale (dernière année) ; leur lumière évolue de +2,8 % par an. Tunis concentre la plus forte activité industrielle. (confiance faible : précision 65 % et rappel 23 % face à la liste de référence)
+- `F55` 125 grappes industrielles (≥ 3 signaux sur 6) : Zone d'activités et logistique 37, Site isolé à vérifier 31, Hydrocarbures et torchères 30, Industrie lourde 27. Part de la lumière nationale : 25,2 % ; croissance annuelle +2,8 %. Validation (OpenStreetMap) : précision 65 %, rappel 23 %.
+- `F56` IND-001 — Hydrocarbures et torchères à Bab El Bhar (Tunis) (827.965 km², 3 signaux, confiance faible); IND-002 — Industrie lourde à Korba (Nabeul) (178.235 km², 4 signaux, confiance moyenne); IND-012 — Hydrocarbures et torchères à Gabes Medina (Gabès) (10.535 km², 3 signaux, confiance faible); IND-004 — Industrie lourde à Grombalia (Nabeul) (26.66 km², 4 signaux, confiance moyenne); IND-003 — Hydrocarbures et torchères à Bou Argoub (Nabeul) (27.95 km², 4 signaux, confiance moyenne); IND-008 — Site isolé à vérifier à Zaghouan (Zaghouan) (17.63 km², 3 signaux, confiance faible); IND-005 — Site isolé à vérifier à Sidi Bou Ali (Sousse) (23.865 km², 3 signaux, confiance faible); IND-007 — Site isolé à vérifier à Enfidha (Sousse) (18.92 km², 3 signaux, confiance faible); IND-013 — Site isolé à vérifier à Ez-Zeriba (Zaghouan) (9.89 km², 3 signaux, confiance faible); IND-009 — Site isolé à vérifier à Bir Mchergua (Zaghouan) (17.2 km², 3 signaux, confiance faible)
+- `F57` Tunis : 2 grappe(s) industrielle(s), 828,8 km², 216,2 % de la lumière de la région.
 
 ## 🏖️ Cas d'usage 7 — Tourisme saisonnier
 
 - **Question** — Quelles zones vivent du tourisme, et comment évolue la saison ?
 - **Données** — VIIRS (monthly), nuitées ou arrivées WDI
 - **Méthode** — Surcroît estival net des unités comparables de même latitude ; test unilatéral ; indice de saison base 100 ; saisons recoupant le Ramadan signalées.
-- **Validation** — Corrélation avec les arrivées de touristes internationaux (WDI) (**r = 0,56**)
+- **Validation** — Corrélation avec les nuitées (**r = non disponible**)
 - **Incertitude** — p-valeur par unité ; années 2020–2021 exclues du classement.
 - **Limites** — Toute activité estivale (diaspora, résidences secondaires, festivals) est captée, pas seulement le tourisme.
-- **Statut** — `experimental` · Confiance: moyenne
+- **Statut** — `experimental` · Confiance: faible
 - **Références** — Analyses saisonnières des lumières et du tourisme, par ex. Hu et al. (2021).
 - **Page du tableau de bord** — [`#tourism`](https://datainnov4africa-web.github.io/NTL_Tunisia_Project/?country=TUN#tourism)
 
 **Résultats de cette exécution**
 
-- `F09` 23 unités sur 264 ont un surcroît de lumière estival net d'au moins 10 % : Djerba Ajim (Médenine), Djerba Midoun (Médenine), Zarzis (Médenine), Djerba Houmet Souk (Médenine). Le surcroît net médian atteint +29 % dans la zone la plus touristique. L'indice de saison (base 100 = 2019) tombe à 83 en 2020 et vaut 128 en 2025. (confiance moyenne : corrélation de 0,56 avec les arrivées de touristes internationaux (WDI) (7 années))
-- `F76` 23 zone(s) touristique(s) sur 264 unités ADM2 (surcroît estival net ≥ 10 %, mois de pointe [7, 8]) : Djerba Ajim (Médenine) (+29 %, confiance élevée), Djerba Midoun (Médenine) (+21 %, confiance élevée), Zarzis (Médenine) (+19 %, confiance élevée), Djerba Houmet Souk (Médenine) (+19 %, confiance élevée), Hammam El Guezaz (Nabeul) (+16 %, confiance élevée), Kerkennah (Sfax) (+16 %, confiance élevée), Kelibia (Nabeul) (+15 %, confiance élevée), El Djem (Mahdia) (+14 %, confiance élevée), Mahres (Sfax) (+14 %, confiance élevée), El Bradaa (Mahdia) (+12 %, confiance élevée).
-- `F77` Indice de saison (base 100 = 2019) : 2014 : 97, 2015 : 98, 2016 : 99, 2017 : 83, 2018 : 99, 2019 : 100, 2020 : 83, 2021 : 66, 2022 : 111, 2023 : 144, 2024 : 94, 2025 : 128. Années avec Ramadan chevauchant la saison : 2014, 2015, 2018, 2019, 2020, 2021, 2022, 2023.
-- `F78` Corrélation entre l'indice de saison et les arrivées de touristes internationaux (WDI) : 0,56 (7 années ; en croissance : 0,53).
+- `F08` 23 unités sur 264 ont un surcroît de lumière estival net d'au moins 10 % : Djerba Ajim (Médenine), Djerba Midoun (Médenine), Zarzis (Médenine), Djerba Houmet Souk (Médenine). Le surcroît net médian atteint +29 % dans la zone la plus touristique. L'indice de saison (base 100 = 2019) tombe à 83 en 2020 et vaut 128 en 2025. (confiance faible : aucune statistique de nuitées pour valider l'indicateur)
+- `F69` 23 zone(s) touristique(s) sur 264 unités ADM2 (surcroît estival net ≥ 10 %, mois de pointe [7, 8]) : Djerba Ajim (Médenine) (+29 %, confiance élevée), Djerba Midoun (Médenine) (+21 %, confiance élevée), Zarzis (Médenine) (+19 %, confiance élevée), Djerba Houmet Souk (Médenine) (+19 %, confiance élevée), Hammam El Guezaz (Nabeul) (+16 %, confiance élevée), Kerkennah (Sfax) (+16 %, confiance élevée), Kelibia (Nabeul) (+15 %, confiance élevée), El Djem (Mahdia) (+14 %, confiance élevée), Mahres (Sfax) (+14 %, confiance élevée), El Bradaa (Mahdia) (+12 %, confiance élevée).
+- `F70` Indice de saison (base 100 = 2019) : 2014 : 97, 2015 : 98, 2016 : 99, 2017 : 83, 2018 : 99, 2019 : 100, 2020 : 83, 2021 : 66, 2022 : 111, 2023 : 144, 2024 : 94, 2025 : 128. Années avec Ramadan chevauchant la saison : 2014, 2015, 2018, 2019, 2020, 2021, 2022, 2023.
+- `F82` Validation : Corrélation avec les nuitées (r = non disponible). Incertitude : p-valeur par unité ; années 2020–2021 exclues du classement. Limites : Toute activité estivale (diaspora, résidences secondaires, festivals) est captée, pas seulement le tourisme. Statut : statistique expérimentale ; confiance faible.
 
 ## 🏙️ Cas d'usage 8 — Signaux d'urbanisation
 
@@ -151,10 +148,10 @@ VIIRS DNB mensuel (VCMSLCFG) et annuel VNL V2, DMSP–VIIRS harmonisé, Black Ma
 
 **Résultats de cette exécution**
 
-- `F79` Surface éclairée nationale : +9,1 % par an ; population : +0,9 % par an. Classes (ADM2) : Urbanisation électrifiée 190, Croissance non éclairée 38, Stable ou en déclin 29, Croissance équilibrée 7.
-- `F80` Entre 2014 et 2025 : 15 081 km² nouvellement éclairés, dont 109 km² de zones déjà habitées (électrification, ≈ 4 k habitants) et 14 972 km² de nouvelles implantations ; 281 km² ont perdu leur lumière.
-- `F81` Plus forte extension de la surface éclairée : Bargou (Siliana) (+33,3 %/an), Sidi Aïch (Gafsa) (+28,9 %/an), Mezzouna (Sidi Bouzid) (+28,6 %/an), Bir Ali Ben Kelifa (Sfax) (+24,3 %/an), Ghraiba (Sfax) (+24,0 %/an), Hassi Ferid (Kasserine) (+23,3 %/an). Croissance non éclairée (population plus rapide que la lumière) : Fouchana (Ben Arous), La Marsa (Tunis), Ben Arous (Ben Arous), El Mnihla (Ariana), Mannouba (Manouba), Ksar Helal (Monastir), Tina (Sfax), Teboulba (Monastir).
-- `F82` Corrélation de rang (Spearman) entre croissance de la surface éclairée et croissance du bâti GHSL : 0,34 (p = 0,000, 264 unités).
+- `F71` Surface éclairée nationale : +9,1 % par an ; population : +0,9 % par an. Classes (ADM2) : Urbanisation électrifiée 190, Croissance non éclairée 38, Stable ou en déclin 29, Croissance équilibrée 7.
+- `F72` Entre 2014 et 2025 : 15 081 km² nouvellement éclairés, dont 109 km² de zones déjà habitées (électrification, ≈ 4 k habitants) et 14 972 km² de nouvelles implantations ; 281 km² ont perdu leur lumière.
+- `F73` Plus forte extension de la surface éclairée : Bargou (Siliana) (+33,3 %/an), Sidi Aïch (Gafsa) (+28,9 %/an), Mezzouna (Sidi Bouzid) (+28,6 %/an), Bir Ali Ben Kelifa (Sfax) (+24,3 %/an), Ghraiba (Sfax) (+24,0 %/an), Hassi Ferid (Kasserine) (+23,3 %/an). Croissance non éclairée (population plus rapide que la lumière) : Fouchana (Ben Arous), La Marsa (Tunis), Ben Arous (Ben Arous), El Mnihla (Ariana), Mannouba (Manouba), Ksar Helal (Monastir), Tina (Sfax), Teboulba (Monastir).
+- `F74` Corrélation de rang (Spearman) entre croissance de la surface éclairée et croissance du bâti GHSL : 0,34 (p = 0,000, 264 unités).
 
 ## Limites générales des lumières nocturnes
 
@@ -172,4 +169,4 @@ VIIRS DNB mensuel (VCMSLCFG) et annuel VNL V2, DMSP–VIIRS harmonisé, Black Ma
 
 
 ---
-<sub>Généré par le notebook le 2026-10-17 · version 2.1.0</sub>
+<sub>Généré par le notebook le 2026-10-24 · version 2.1.0</sub>

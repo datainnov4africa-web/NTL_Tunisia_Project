@@ -565,7 +565,7 @@ class AgentAnswer:
                 "color:#231F20}b{color:#00553A}.cite{background:#E8F5EF;border:1px solid #00A86A55;border-radius:5px;padding:0 4px;"
                 "font-size:.8em;font-weight:700;color:#00553A}header{border-bottom:4px solid #00704A;margin-bottom:18px;"
                 "padding-bottom:8px;color:#6f6d68;font-size:.85em}@media print{body{margin:0}}</style>"
-                f"<header>{'Banque africaine de développement × Centre Big Data du FMI' if FR else 'African Development Bank × IMF Big Data Center'}"
+                f"<header>{'Banque africaine de développement × Data Innovation for Africa (DI4A)' if FR else 'African Development Bank × Data Innovation for Africa (DI4A)'}"
                 f" — {'Lumières nocturnes : huit cas d’usage' if FR else 'Night-time lights: eight use cases'}</header>"
                 f"{body}</html>")
         h = p.with_suffix(".html")

@@ -59,7 +59,7 @@ T = {
         "ntl": "Lumières nocturnes", "title": "Lumières nocturnes — 8 cas d'usage",
         "title2": ("Lumières nocturnes :", "8 cas d'usage"),
         "tagline": "statistiques et politiques publiques · tableau de bord · agent IA",
-        "tag": "BAD × FMI", "tag_long": "Banque africaine de développement × Centre Big Data du FMI",
+        "tag": "BAD × DI4A", "tag_long": "Banque africaine de développement × Data Innovation for Africa (DI4A)",
         "src": "VIIRS VNL V2 · NOAA/EOG · Google Earth Engine",
         "src_m": "VIIRS DNB mensuel (VCMSLCFG) · NOAA/EOG · Google Earth Engine",
         "src_wb": "VIIRS VNL V2 · Banque mondiale (WDI)",
@@ -90,7 +90,7 @@ T = {
         "ntl": "Night-time lights", "title": "Night-time lights — 8 use cases",
         "title2": ("Night-time lights:", "8 use cases"),
         "tagline": "statistics & public policy · dashboard · AI agent",
-        "tag": "AfDB × IMF", "tag_long": "African Development Bank × IMF Big Data Center",
+        "tag": "AfDB × DI4A", "tag_long": "African Development Bank × Data Innovation for Africa (DI4A)",
         "src": "VIIRS VNL V2 · NOAA/EOG · Google Earth Engine",
         "src_m": "VIIRS DNB monthly (VCMSLCFG) · NOAA/EOG · Google Earth Engine",
         "src_wb": "VIIRS VNL V2 · World Bank (WDI)",
@@ -841,7 +841,7 @@ def _cover(geo, cfg, country, out_dir, synthetic, W, H, name, compact=False):
     by = H - int(52 * s) if not compact else H - 46
     xx2 = _pill(d, (X, by), "AfDB" if LANG == "en" else "BAD", fb, "#FFFFFF", GREEN, pad=(10, 6))
     d.text((xx2 + 8, by + 4), "×", font=fb, fill=MUTED)
-    xx3 = _pill(d, (xx2 + 26, by), "IMF" if LANG == "en" else "FMI", fb, "#FFFFFF", BLUE, pad=(10, 6))
+    xx3 = _pill(d, (xx2 + 26, by), "DI4A", fb, "#FFFFFF", BLUE, pad=(10, 6))
     if synthetic:
         _pill(d, (xx3 + 14, by), T["synth"], fb, NIGHT, GOLD, pad=(10, 6))
     d.text((W - X, H - int(22 * s) if not compact else H - 20),

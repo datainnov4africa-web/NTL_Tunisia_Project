@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 African Development Bank and IMF Big Data Center
+Copyright (c) 2026 African Development Bank and Data Innovation for Africa (DI4A)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -25,3 +25,5 @@ Data notice: this licence covers the code only. Data, maps and images derived fr
 third-party datasets (VIIRS/EOG, NASA Black Marble, GHSL, WorldPop, Copernicus
 Sentinel-5P, MODIS, OpenStreetMap, World Bank, geoBoundaries/FAO GAUL) remain subject
 to the licence and attribution terms of each source.
+Results, maps, charts and images produced by this project may be reused only with
+the source stated as: "Source: AfDB-DI4A" (African Development Bank - Data Innovation for Africa).

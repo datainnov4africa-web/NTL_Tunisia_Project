@@ -13,7 +13,7 @@ import logging
 from pathlib import Path
 
 log = logging.getLogger("ntl")
-UA = {"User-Agent": "ntl-economic-analysis/2.1 (AfDB x IMF training notebook)"}
+UA = {"User-Agent": "ntl-economic-analysis/2.1 (AfDB x DI4A notebook)"}
 
 _SVG_FAKE = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect width="900" height="600" fill="#00704A"/>'
              '<rect y="200" width="900" height="200" fill="#ffffff"/><rect y="400" width="900" height="200" fill="#1F4E8C"/>'

@@ -439,7 +439,7 @@ def publish_dashboard(iso3: str, repo_name: str, github_user: str | None = None,
                 progress("⚠️ branch {b} not updated: {e}".format(b=main, e=e))
             name = country or _country_from_site(site_dir, iso3) or iso3.upper()
             desc = (f"Night-time lights — {name}: 8 use cases for statistics & public policy, public dashboard and AI agent "
-                    f"(AfDB × IMF)")
+                    f"(AfDB × DI4A)")
             update_repo_metadata(gh, owner, repo_name, desc, url, repo_topics(name, iso3), progress)
             repo_web = info.get("html_url") or f"https://github.com/{owner}/{repo_name}"
             progress("ℹ️ Social preview: upload assets/cover.jpg in Settings → General → Social preview ({u}/settings) — the GitHub API cannot set it.".format(u=repo_web))

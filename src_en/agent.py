@@ -66,7 +66,7 @@ UC = {  # use case -> (dashboard page, keywords used by retrieval)
                  "villages population croissance demographique bati construction etalement urbanisation urban city "
                  "sprawl lit area settlement settlements electrified built-up population growth"),
     10: ("quality", "qualite norme normes dqaf gsbpm fair onu principes experimental experimentale validation incertitude "
-                    "quality standard standards un principles experimental uncertainty imf fmi"),
+                    "quality standard standards un principles experimental uncertainty dqaf"),
     9: ("method", "methode seuil donnees source viirs dmsp nuage torchere masque limite method threshold data source"),
 }
 
@@ -76,7 +76,7 @@ T = {
                7: "Tourisme", 8: "Urbanisation", 9: "Méthode", 10: "Qualité"},
         "system": (
             "Tu es l'assistant analytique du tableau de bord « Lumières nocturnes : huit cas d'usage » pour "
-            "{country} ({period}), produit par la Banque africaine de développement et le Centre Big Data du FMI.\n"
+            "{country} ({period}), produit par la Banque africaine de développement et Data Innovation for Africa (DI4A).\n"
             "RÈGLES IMPÉRATIVES :\n"
             "1. Réponds UNIQUEMENT à partir des FAITS fournis ci-dessous. N'invente aucun chiffre, aucune région, aucune date.\n"
             "2. Cite chaque affirmation chiffrée avec l'identifiant du fait entre crochets, par exemple [F12].\n"
@@ -116,7 +116,7 @@ T = {
                7: "Tourism", 8: "Urbanisation", 9: "Method", 10: "Quality"},
         "system": (
             "You are the analytical assistant of the \"Night-time lights: eight use cases\" dashboard for "
-            "{country} ({period}), produced by the African Development Bank and the IMF Big Data Center.\n"
+            "{country} ({period}), produced by the African Development Bank and Data Innovation for Africa (DI4A).\n"
             "MANDATORY RULES:\n"
             "1. Answer ONLY from the FACTS provided below. Never invent a figure, a region or a date.\n"
             "2. Cite every quantitative statement with the fact identifier in square brackets, e.g. [F12].\n"
@@ -707,8 +707,8 @@ def build_context(data_dir: str | Path) -> dict:
     if q:
         add(10, "Qualité et normes internationales" if fr else "Quality and international standards",
             q.get("statement", "") + (" Cadres appliqués : Principes fondamentaux de la statistique officielle (ONU), "
-                                      "DQAF du FMI, GSBPM (CEE-ONU), principes FAIR." if fr else
-                                      " Frameworks applied: UN Fundamental Principles of Official Statistics, IMF DQAF, "
+                                      "DQAF, GSBPM (CEE-ONU), principes FAIR." if fr else
+                                      " Frameworks applied: UN Fundamental Principles of Official Statistics, DQAF, "
                                       "UNECE GSBPM, FAIR principles."))
         for u in q.get("use_cases", []):
             v = u.get("validation") or {}

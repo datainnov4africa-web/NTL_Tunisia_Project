@@ -4,9 +4,9 @@ type: software
 title: "Night-time lights: eight use cases \u2014 Tunisia \u2014 statistics & public policy, public dashboard and AI agent"
 authors:
   - name: "African Development Bank"
-  - name: "IMF Big Data Center"
+  - name: "Data Innovation for Africa (DI4A)"
 version: "2.1.0"
-date-released: 2026-10-17
+date-released: 2026-10-24
 url: "https://datainnov4africa-web.github.io/NTL_Tunisia_Project/"
 repository-code: "https://github.com/datainnov4africa-web/NTL_Tunisia_Project"
 license: MIT

@@ -13,7 +13,7 @@
   <a href="README.fr.md"><img src="https://img.shields.io/badge/languages-FR%20%7C%20EN-F5C242" alt="FR | EN"></a>
   <a href="docs/methodology.md"><img src="https://img.shields.io/badge/data-VIIRS%20%C2%B7%20Black%20Marble-0B121B?logo=nasa&logoColor=white" alt="VIIRS"></a>
   <a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/en/?country=TUN#assistant"><img src="https://img.shields.io/badge/AI%20agent-Groq%20%7C%20Gemini%20%7C%20Ollama-6E40C9" alt="AI agent"></a>
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/updated-2026--10--17-555" alt="updated"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/updated-2026--10--24-555" alt="updated"></a>
 </p>
 
 <p align="center"><a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/en/"><img src="https://img.shields.io/badge/OPEN%20THE%20LIVE%20DASHBOARD-%E2%96%B6-00704A?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Open the live dashboard" height="42"></a>&nbsp;&nbsp;<a href="https://colab.research.google.com/github/datainnov4africa-web/NTL_Tunisia_Project/blob/main/notebooks/NTL_8_use_cases_EN.ipynb"><img src="https://img.shields.io/badge/RUN%20THE%20NOTEBOOK%20IN%20COLAB-%E2%96%B6-3F7FC7?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Run the notebook in Colab" height="42"></a></p>
@@ -39,7 +39,7 @@
 <tr>
 <td align="center" width="25%"><h3>+6.0%</h3><b>Annual growth of light</b><br><sub>2014–2025, robust slope (Theil–Sen)</sub></td>
 <td align="center" width="25%"><h3>+4.1%</h3><b>Last 12 months vs previous 12</b><br><sub>seasonally adjusted series, up to 12/2025</sub></td>
-<td align="center" width="25%"><h3>4.19</h3><b>Light–GDP elasticity</b><br><sub>95% CI 1.02 to 7.36 · confidence medium</sub></td>
+<td align="center" width="25%"><h3>—</h3><b>Light–GDP elasticity</b><br><sub>GDP unavailable</sub></td>
 <td align="center" width="25%"><h3>0.27</h3><b>Gini of light per capita</b><br><sub>ADM2 units, 2025</sub></td>
 </tr>
 <tr>
@@ -79,10 +79,9 @@
 </tr>
 <tr>
 <td width="50%" valign="top">
-<a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/en/?country=TUN#time"><img src="assets/uc3.png" alt="Use case 3 — Light–GDP relationship" width="100%"></a>
 <h3>💹 3 · Light–GDP relationship</h3>
 <p><b>Question</b> — <i>Can growth be estimated before its release, and regional GDP?</i></p>
-<p><b>Finding</b> — The elasticity of light with respect to real GDP is 4.19 in levels (95% CI: 1.02 to 7.36, R² = 0.54, 12 years) and 0.25 in growth rates (CI: −0.06 to 0.56).</p>
+<p><b>Finding</b> — Validation: Out-of-sample tracking of official growth (correlation / MAE (pp) = n/a / n/a). Uncertainty: 95% CI of the elasticity: n/a to n/a; 80% and 95% prediction intervals.</p>
 <p><a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/en/?country=TUN#time">Open the page →</a></p></td>
 <td width="50%" valign="top">
 <a href="https://datainnov4africa-web.github.io/NTL_Tunisia_Project/en/?country=TUN#shocks"><img src="assets/uc4.png" alt="Use case 4 — Shocks and resilience" width="100%"></a>
@@ -212,7 +211,7 @@ flowchart LR
 Full methodology: [docs/methodology.md](docs/methodology.md) · quality report: [docs/QUALITY.md](docs/QUALITY.md).
 
 - **UN Fundamental Principles of Official Statistics** — relevance, impartiality, professional standards, transparency of sources and methods, open access to the results.
-- **IMF Data Quality Assessment Framework (DQAF)** — integrity, methodological soundness, accuracy and reliability, serviceability, accessibility.
+- **Data Quality Assessment Framework (DQAF)** — integrity, methodological soundness, accuracy and reliability, serviceability, accessibility.
 - **GSBPM** — every notebook section maps to a phase of the Generic Statistical Business Process Model.
 - **FAIR** — findable (stable URLs, citation file), accessible (open formats), interoperable (CSV, JSON, GeoJSON), reusable (licence, provenance in `manifest.json`).
 - **Experimental statistics** — night-light estimates complement, and never replace, official statistics; they are labelled *experimental* with their uncertainty.
@@ -222,11 +221,11 @@ Full methodology: [docs/methodology.md](docs/methodology.md) · quality report: 
 |---|---|---|---|
 | 📈 1 · Time dynamics | `Experimental` | high | p-value = < 0.0001 |
 | 🗺️ 2 · Regional growth and convergence | `Experimental` | medium | Spearman ρ = 0.10 |
-| 💹 3 · Light–GDP relationship | `Experimental` | medium | correlation / MAE (pp) = -0.31 / 2.9 |
+| 💹 3 · Light–GDP relationship | `Experimental` | None | correlation / MAE (pp) = n/a / n/a |
 | ⚡ 4 · Shocks and resilience | `Experimental` | medium | trough (main shock) = -9.0% — yes |
-| ⚖️ 5 · Inequality and electrification | `Experimental` | medium | mean gap (pp) = -12.3 |
-| 🏭 6 · Industrial zones | `Experimental` | low | precision / recall / F1 = not available |
-| 🏖️ 7 · Seasonal tourism | `Experimental` | medium | r = 0.56 |
+| ⚖️ 5 · Inequality and electrification | `Experimental` | medium | mean gap (pp) = n/a |
+| 🏭 6 · Industrial zones | `Experimental` | low | precision / recall / F1 = 65% / 23% / 0.33 |
+| 🏖️ 7 · Seasonal tourism | `Experimental` | low | r = not available |
 | 🏙️ 8 · Urbanisation signals | `Experimental` | low | Spearman ρ = 0.34 |
 
 
@@ -253,7 +252,7 @@ Full methodology: [docs/methodology.md](docs/methodology.md) · quality report: 
 ## 🔐 Security
 
 - Tokens and API keys are **never** written to disk, printed, logged, committed or published; publication uses the GitHub REST API with an in-memory token and redacts every error message.
-- Use a **fine-grained token** limited to this repository, with an expiry date; revoke it after the workshop.
+- Use a **fine-grained token** limited to this repository, with an expiry date; revoke it when it is no longer needed.
 - Every file is scanned for token patterns before each push; the publication is cancelled if one is found.
 - The site is static (no server, no database); the AI assistant runs in the visitor's browser.
 
@@ -264,7 +263,7 @@ See [`CITATION.cff`](CITATION.cff) (GitHub shows a *Cite this repository* button
 
 ```bibtex
 @software{ntl_tun_2026,
-  author  = {{African Development Bank} and {IMF Big Data Center}},
+  author  = {{African Development Bank} and {Data Innovation for Africa (DI4A)}},
   title   = {Night-time lights: eight use cases — Tunisia — statistics & public policy, public dashboard and AI agent},
   year    = {2026},
   version = {2.1.0},
@@ -275,13 +274,13 @@ See [`CITATION.cff`](CITATION.cff) (GitHub shows a *Cite this repository* button
 
 ## ⚖️ License
 
-Code: [MIT](LICENSE). Derived data and images follow the licence of each source dataset (for example, EOG VIIRS products, GHSL, WorldPop, geoBoundaries and World Bank WDI are distributed under CC BY 4.0, OpenStreetMap under ODbL) — see each source's licence before reuse.
+© AfDB-DI4A (African Development Bank — Data Innovation for Africa). **Any reuse of the results, maps, charts or images must state the source: “Source: AfDB-DI4A”.** Code: [MIT](LICENSE). Derived data and images follow the licence of each source dataset (for example, EOG VIIRS products, GHSL, WorldPop, geoBoundaries and World Bank WDI are distributed under CC BY 4.0, OpenStreetMap under ODbL) — see each source's licence before reuse.
 
 
 ## 🙏 Acknowledgements
 
-Developed by the **African Development Bank (AfDB)** with the **IMF Big Data Center** for the workshop *Big Data for Macroeconomic Statistics* hosted by the **Africa Training Institute (ATI)**, Mauritius, 26–30 October 2026. Night-time lights by the Earth Observation Group (Payne Institute, Colorado School of Mines) and NASA Black Marble, processed with Google Earth Engine.
+Developed by the **African Development Bank (AfDB)** and **Data Innovation for Africa (DI4A)**. Night-time lights by the Earth Observation Group (Payne Institute, Colorado School of Mines) and NASA Black Marble, processed with Google Earth Engine.
 
 
 ---
-<p align="center"><sub>Generated by the notebook on 2026-10-17 · version 2.1.0 · <a href="https://github.com/datainnov4africa-web/NTL_Tunisia_Project">datainnov4africa-web/NTL_Tunisia_Project</a></sub></p>
+<p align="center"><sub>Generated by the notebook on 2026-10-24 · version 2.1.0 · <a href="https://github.com/datainnov4africa-web/NTL_Tunisia_Project">datainnov4africa-web/NTL_Tunisia_Project</a></sub></p>
