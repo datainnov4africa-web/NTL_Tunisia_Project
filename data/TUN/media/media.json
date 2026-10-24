@@ -8,7 +8,7 @@
   "source": "VIIRS VNL V2 · NOAA/EOG · Google Earth Engine",
   "width": 900,
   "height": 1000,
-  "bytes": 3912207
+  "bytes": 3913739
  },
  "timelapse_webp": {
   "file": "media/timelapse.webp",
@@ -19,7 +19,7 @@
   "source": "VIIRS VNL V2 · NOAA/EOG · Google Earth Engine",
   "width": 900,
   "height": 1000,
-  "bytes": 1936532
+  "bytes": 1939832
  },
  "timelapse_poster": {
   "file": "media/timelapse_poster.jpg",
@@ -30,7 +30,7 @@
   "source": "VIIRS VNL V2 · NOAA/EOG · Google Earth Engine",
   "width": 900,
   "height": 1000,
-  "bytes": 82330
+  "bytes": 82879
  },
  "before_after": {
   "file": "media/before_after.gif",
@@ -41,7 +41,7 @@
   "source": "VIIRS VNL V2 · NOAA/EOG · Google Earth Engine",
   "width": 900,
   "height": 1000,
-  "bytes": 583761
+  "bytes": 583502
  },
  "before_after_still": {
   "file": "media/before_after.png",
@@ -52,7 +52,7 @@
   "source": "VIIRS VNL V2 · NOAA/EOG · Google Earth Engine",
   "width": 1200,
   "height": 980,
-  "bytes": 399821
+  "bytes": 400005
  },
  "shock": {
   "file": "media/shock.gif",
@@ -63,7 +63,7 @@
   "source": "VIIRS DNB mensuel (VCMSLCFG) · NOAA/EOG · Google Earth Engine",
   "width": 900,
   "height": 505,
-  "bytes": 132090
+  "bytes": 132258
  },
  "shock_still": {
   "file": "media/shock_still.png",
@@ -74,7 +74,7 @@
   "source": "VIIRS DNB mensuel (VCMSLCFG) · NOAA/EOG · Google Earth Engine",
   "width": 900,
   "height": 505,
-  "bytes": 75105
+  "bytes": 75363
  },
  "cover": {
   "file": "media/cover.jpg",
@@ -85,7 +85,7 @@
   "source": "VIIRS VNL V2 · NOAA/EOG · Google Earth Engine",
   "width": 1280,
   "height": 640,
-  "bytes": 82885
+  "bytes": 84008
  },
  "banner": {
   "file": "media/banner.png",
@@ -96,7 +96,7 @@
   "source": "VIIRS VNL V2 · NOAA/EOG · Google Earth Engine",
   "width": 1600,
   "height": 480,
-  "bytes": 150266
+  "bytes": 151619
  },
  "uc1": {
   "file": "media/uc1.png",
@@ -107,21 +107,8 @@
   "source": "VIIRS DNB mensuel (VCMSLCFG) · NOAA/EOG · Google Earth Engine",
   "width": 800,
   "height": 500,
-  "bytes": 70611,
+  "bytes": 70634,
   "uc": 1,
-  "page": "time"
- },
- "uc3": {
-  "file": "media/uc3.png",
-  "kind": "png",
-  "title": "Cas d'usage 3 — Lumières et PIB",
-  "alt": "Cas d'usage 3 — Lumières et PIB: élasticité lumière–PIB",
-  "caption": "L'élasticité de la lumière au PIB réel est de 4,19 en niveaux (IC 95 % : 1,02 à 7,36, R² = 0,54, 12 années) et de 0,25 en taux de croissance (IC : −0,06 à 0,56). Hors échantillon, la croissance des lumières suit celle du PIB avec une corrélation de −0,31 (erreur absolue moyenne : 2,9 point de croissance). (confiance moyenne : n = 12, significatif mais IC large (6.34))",
-  "source": "VIIRS VNL V2 · Banque mondiale (WDI)",
-  "width": 800,
-  "height": 500,
-  "bytes": 38825,
-  "uc": 3,
   "page": "time"
  },
  "uc4": {
@@ -133,7 +120,7 @@
   "source": "VIIRS DNB mensuel (VCMSLCFG) · NOAA/EOG · Google Earth Engine",
   "width": 800,
   "height": 500,
-  "bytes": 61871,
+  "bytes": 61895,
   "uc": 4,
   "page": "shocks"
  },
@@ -146,7 +133,7 @@
   "source": "VIIRS · GHSL · Sentinel-5P · MODIS · OpenStreetMap",
   "width": 800,
   "height": 500,
-  "bytes": 77008,
+  "bytes": 77036,
   "uc": 5,
   "page": "inequality"
  },
@@ -155,11 +142,11 @@
   "kind": "png",
   "title": "Cas d'usage 6 — Zones industrielles",
   "alt": "Cas d'usage 6 — Zones industrielles: grappes industrielles",
-  "caption": "125 grappes industrielles détectées par concordance de signaux satellitaires : 27 d'industrie lourde, 37 zones d'activités et de logistique, 30 sites d'hydrocarbures et 31 sites isolés à vérifier. Elles émettent 25,2 % de la lumière nationale (dernière année) ; leur lumière évolue de +2,8 % par an. Tunis concentre la plus forte activité industrielle. (confiance faible : aucune liste de référence pour valider la détection)",
+  "caption": "125 grappes industrielles détectées par concordance de signaux satellitaires : 27 d'industrie lourde, 37 zones d'activités et de logistique, 30 sites d'hydrocarbures et 31 sites isolés à vérifier. Elles émettent 25,2 % de la lumière nationale (dernière année) ; leur lumière évolue de +2,8 % par an. Tunis concentre la plus forte activité industrielle. (confiance faible : précision 65 % et rappel 23 % face à la liste de référence)",
   "source": "VIIRS · GHSL · Sentinel-5P · MODIS · OpenStreetMap",
   "width": 800,
   "height": 500,
-  "bytes": 83605,
+  "bytes": 83638,
   "uc": 6,
   "page": "industry"
  },
@@ -172,7 +159,7 @@
   "source": "dashboard",
   "width": 1440,
   "height": 900,
-  "bytes": 596532,
+  "bytes": 595376,
   "page": "overview"
  },
  "screen_map": {
@@ -184,7 +171,7 @@
   "source": "dashboard",
   "width": 1440,
   "height": 900,
-  "bytes": 413763,
+  "bytes": 412643,
   "page": "map"
  },
  "screen_time": {
@@ -196,7 +183,7 @@
   "source": "dashboard",
   "width": 1440,
   "height": 900,
-  "bytes": 237762,
+  "bytes": 236673,
   "page": "time"
  },
  "screen_regions": {
@@ -208,7 +195,7 @@
   "source": "dashboard",
   "width": 1440,
   "height": 900,
-  "bytes": 242761,
+  "bytes": 241547,
   "page": "regions"
  },
  "screen_shocks": {
@@ -220,7 +207,7 @@
   "source": "dashboard",
   "width": 1440,
   "height": 900,
-  "bytes": 224278,
+  "bytes": 223189,
   "page": "shocks"
  },
  "screen_inequality": {
@@ -232,7 +219,7 @@
   "source": "dashboard",
   "width": 1440,
   "height": 900,
-  "bytes": 198658,
+  "bytes": 197524,
   "page": "inequality"
  },
  "screen_industry": {
@@ -244,7 +231,7 @@
   "source": "dashboard",
   "width": 1440,
   "height": 900,
-  "bytes": 356024,
+  "bytes": 359918,
   "page": "industry"
  },
  "screen_tourism": {
@@ -256,7 +243,7 @@
   "source": "dashboard",
   "width": 1440,
   "height": 900,
-  "bytes": 325584,
+  "bytes": 317960,
   "page": "tourism"
  },
  "screen_urban": {
@@ -268,7 +255,7 @@
   "source": "dashboard",
   "width": 1440,
   "height": 900,
-  "bytes": 412388,
+  "bytes": 411284,
   "page": "urban"
  },
  "screen_mobile": {
@@ -280,7 +267,7 @@
   "source": "dashboard",
   "width": 390,
   "height": 844,
-  "bytes": 254899,
+  "bytes": 262583,
   "page": "mobile"
  },
  "dashboard_tour": {
@@ -292,6 +279,6 @@
   "source": "dashboard",
   "width": 960,
   "height": 600,
-  "bytes": 3118069
+  "bytes": 3121052
  }
 }

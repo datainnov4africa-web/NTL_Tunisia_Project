@@ -30,7 +30,7 @@
   const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const TX = {
     fr: {
-      eyebrow: "BAD × FMI · Centre Big Data", t1: "Lumières nocturnes", t2: "huit cas d'usage",
+      eyebrow: "Banque africaine de développement · DI4A", t1: "Lumières nocturnes", t2: "huit cas d'usage",
       pitch: "Vue de l'espace, la lumière émise la nuit éclaire huit questions de politique publique : croissance, régions, PIB, chocs, inégalités et accès à l'électricité, industrie, tourisme, urbanisation — partout, chaque mois, même là où les statistiques manquent.",
       cta_map: "Explorer la carte", cta_ai: "Interroger l'agent IA", play: "Lire l'animation", pause: "Mettre l'animation en pause",
       hx_fig: "Animation des lumières nocturnes observées par satellite, {a} à {b}", hx_cap: "VIIRS · composite annuel", hx_idx: "Lumière émise", hx_base: "base 100 en {y}",
@@ -61,7 +61,7 @@
       csv: "Télécharger CSV", csv_lbl: "Télécharger ce tableau au format CSV", png: "Télécharger en PNG",
     },
     en: {
-      eyebrow: "AfDB × IMF · Big Data Center", t1: "Night-time lights", t2: "eight use cases",
+      eyebrow: "African Development Bank · DI4A", t1: "Night-time lights", t2: "eight use cases",
       pitch: "Seen from space, the light emitted at night sheds light on eight policy questions: growth, regions, GDP, shocks, inequality and electricity access, industry, tourism, urbanisation — everywhere, every month, even where statistics are missing.",
       cta_map: "Explore the map", cta_ai: "Ask the AI agent", play: "Play the animation", pause: "Pause the animation",
       hx_fig: "Animation of night-time lights observed by satellite, {a} to {b}", hx_cap: "VIIRS · annual composite", hx_idx: "Light emitted", hx_base: "index, {y} = 100",

@@ -112,7 +112,9 @@ function renderHeader() {
   $("#synthetic-banner").hidden = !m.synthetic;
   $("#foot").innerHTML = `Updated ${new Date(m.generated_at).toLocaleString("en-US")} · VIIRS data (NOAA/EOG, NASA), ` +
     `boundaries ${esc((m.boundaries && m.boundaries.ADM1) || "geoBoundaries")}, population ${esc(m.pop_source || "GHSL")}, ` +
-    `World Bank · Code and methodology: see the "Methods & limitations" page.`;
+    `World Bank · Code and methodology: see the "Methods & limitations" page.<br>` +
+    `<b>© ${new Date().getFullYear()} AfDB-DI4A</b> — African Development Bank, Data Innovation for Africa. ` +
+    `Any reuse of the figures, maps and charts must state the source: <b>“Source: AfDB-DI4A”</b>.`;
 }
 
 function route() {

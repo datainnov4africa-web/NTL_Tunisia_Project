@@ -178,8 +178,8 @@ table.data tr:hover td { background: var(--surface-2); }
 .leaflet-popup-content table { border-collapse: collapse; font-size: 13px; }
 .leaflet-tooltip { font: 600 12px/1.3 inherit; }
 
-/* ==== AfDB visual identity (green / gold), co-branded with the IMF Big Data Center ======== */
-:root { --afdb: #00704A; --afdb-dark: #00553A; --afdb-light: #00A86A; --afdb-gold: #F5C242; --imf: #3F7FC7;
+/* ==== AfDB visual identity (green / gold), co-branded with Data Innovation for Africa (DI4A) ======== */
+:root { --afdb: #00704A; --afdb-dark: #00553A; --afdb-light: #00A86A; --afdb-gold: #F5C242; --blue: #3F7FC7; /* accent blue */
   --night: #00553A; --accent: #00704A; --s1: #00704A; --s3: #3F7FC7; }
 :root[data-theme="dark"] { --accent: #F5C242; --s1: #00A86A; }
 @media (prefers-color-scheme: dark) { :root:where(:not([data-theme="light"])) { --accent: #F5C242; --s1: #00A86A; } }

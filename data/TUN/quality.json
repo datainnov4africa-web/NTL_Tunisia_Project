@@ -1,6 +1,6 @@
 {
  "version": "2.1.0",
- "generated": "2026-10-17T13:53:09",
+ "generated": "2026-10-24T06:31:34",
  "country": "Tunisie",
  "period": [
   2014,
@@ -66,13 +66,13 @@
    "validation": {
     "text": "Suivi hors échantillon de la croissance officielle",
     "metric": "corrélation / EAM (points)",
-    "value": "-0,31 / 2,9"
+    "value": "n.d. / n.d."
    },
-   "uncertainty": "IC 95 % de l'élasticité : 1,02 à 7,36 ; intervalles de prévision 80 % et 95 %.",
+   "uncertainty": "IC 95 % de l'élasticité : n.d. à n.d. ; intervalles de prévision 80 % et 95 %.",
    "limits": "Échantillon annuel court ; le PIB régional est une statistique expérimentale à confronter aux comptes régionaux.",
    "status": "experimental",
-   "confidence": "moyenne",
-   "confidence_reason": "n = 12, significatif mais IC large (6.34)"
+   "confidence": null,
+   "confidence_reason": null
   },
   {
    "uc": 4,
@@ -111,7 +111,7 @@
    "validation": {
     "text": "Écart avec le taux d'accès à l'électricité de la Banque mondiale",
     "metric": "écart moyen (points)",
-    "value": "-12,3"
+    "value": "n.d."
    },
    "uncertainty": "Plage selon le seuil de radiance ; IC bootstrap du Gini.",
    "limits": "Proxy de l'éclairage extérieur, pas du raccordement : un foyer raccordé mais peu éclairé paraît « dans le noir ».",
@@ -133,15 +133,15 @@
    ],
    "method": "Concordance de six signaux par pixel (≥ 3 dont la lumière), grappes 8-connexes, typologie et confiance.",
    "validation": {
-    "text": "Comparaison avec la liste de référence (n.d.)",
+    "text": "Comparaison avec la liste de référence (OpenStreetMap)",
     "metric": "précision / rappel / F1",
-    "value": "non disponible"
+    "value": "65 % / 23 % / 0,33"
    },
    "uncertainty": "Confiance par grappe selon le nombre de signaux forts ; sites isolés à vérifier.",
    "limits": "Résolution de Sentinel-5P (≈ 5 km) et MODIS (1 km) : les signaux qualifient un voisinage.",
    "status": "experimental",
    "confidence": "faible",
-   "confidence_reason": "aucune liste de référence pour valider la détection"
+   "confidence_reason": "précision 65 % et rappel 23 % face à la liste de référence"
   },
   {
    "uc": 7,
@@ -154,15 +154,15 @@
    ],
    "method": "Surcroît estival net des unités comparables de même latitude ; test unilatéral ; indice de saison base 100 ; saisons recoupant le Ramadan signalées.",
    "validation": {
-    "text": "Corrélation avec les arrivées de touristes internationaux (WDI)",
+    "text": "Corrélation avec les nuitées",
     "metric": "r",
-    "value": "0,56"
+    "value": "non disponible"
    },
    "uncertainty": "p-valeur par unité ; années 2020–2021 exclues du classement.",
    "limits": "Toute activité estivale (diaspora, résidences secondaires, festivals) est captée, pas seulement le tourisme.",
    "status": "experimental",
-   "confidence": "moyenne",
-   "confidence_reason": "corrélation de 0,56 avec les arrivées de touristes internationaux (WDI) (7 années)"
+   "confidence": "faible",
+   "confidence_reason": "aucune statistique de nuitées pour valider l'indicateur"
   },
   {
    "uc": 8,
@@ -192,7 +192,7 @@
   {
    "dimension": "0. Conditions préalables",
    "practice": "Cadre institutionnel, ressources, pertinence",
-   "evidence": "Projet BAD × Centre Big Data du FMI ; données satellitaires gratuites ; questions de politique publique explicites pour chaque cas d'usage."
+   "evidence": "Projet Banque africaine de développement × Data Innovation for Africa (DI4A) ; données satellitaires gratuites ; questions de politique publique explicites pour chaque cas d'usage."
   },
   {
    "dimension": "1. Garanties d'intégrité",
@@ -322,7 +322,7 @@
  ],
  "references": [
   "United Nations (2014). Fundamental Principles of Official Statistics. A/RES/68/261.",
-  "IMF (2012). Data Quality Assessment Framework (DQAF) — generic framework.",
+  "Data Quality Assessment Framework (DQAF, 2012) — generic framework.",
   "UNECE (2019). Generic Statistical Business Process Model, GSBPM v5.1.",
   "Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data 3.",
   "Eurostat (2021). Experimental statistics — European Statistical System guidelines."

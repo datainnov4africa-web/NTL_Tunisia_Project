@@ -1,6 +1,6 @@
 {
  "version": "2.1.0",
- "generated": "2026-10-17T13:53:11",
+ "generated": "2026-10-24T06:31:35",
  "country": "Tunisia",
  "period": [
   2014,
@@ -66,13 +66,13 @@
    "validation": {
     "text": "Out-of-sample tracking of official growth",
     "metric": "correlation / MAE (pp)",
-    "value": "-0.31 / 2.9"
+    "value": "n/a / n/a"
    },
-   "uncertainty": "95% CI of the elasticity: 1.02 to 7.36; 80% and 95% prediction intervals.",
+   "uncertainty": "95% CI of the elasticity: n/a to n/a; 80% and 95% prediction intervals.",
    "limits": "Short annual sample; regional GDP is an experimental statistic to be checked against regional accounts.",
    "status": "experimental",
-   "confidence": "medium",
-   "confidence_reason": "n = 12, significant but wide CI (6.34)"
+   "confidence": null,
+   "confidence_reason": null
   },
   {
    "uc": 4,
@@ -111,7 +111,7 @@
    "validation": {
     "text": "Gap with the World Bank electricity-access rate",
     "metric": "mean gap (pp)",
-    "value": "-12.3"
+    "value": "n/a"
    },
    "uncertainty": "Range across radiance thresholds; bootstrap CI of the Gini.",
    "limits": "Proxy of outdoor lighting, not of connection: a connected but dimly lit household looks “in the dark”.",
@@ -133,15 +133,15 @@
    ],
    "method": "Concordance of six signals per pixel (≥ 3 including light), 8-connected clusters, typology and confidence.",
    "validation": {
-    "text": "Comparison with the reference list (n/a)",
+    "text": "Comparison with the reference list (OpenStreetMap)",
     "metric": "precision / recall / F1",
-    "value": "not available"
+    "value": "65% / 23% / 0.33"
    },
    "uncertainty": "Per-cluster confidence from the number of strong signals; isolated sites to verify.",
    "limits": "Sentinel-5P (≈ 5 km) and MODIS (1 km) resolution: signals describe a neighbourhood.",
    "status": "experimental",
    "confidence": "low",
-   "confidence_reason": "no reference list available to validate the detection"
+   "confidence_reason": "precision 65% and recall 23% against the reference list"
   },
   {
    "uc": 7,
@@ -154,15 +154,15 @@
    ],
    "method": "Summer excess net of comparable units at the same latitude; one-sided test; season index base 100; seasons overlapping Ramadan flagged.",
    "validation": {
-    "text": "Correlation with les arrivées de touristes internationaux (WDI)",
+    "text": "Correlation with hotel nights",
     "metric": "r",
-    "value": "0.56"
+    "value": "not available"
    },
    "uncertainty": "p-value per unit; 2020–2021 excluded from the classification.",
    "limits": "Any summer activity (diaspora, second homes, festivals) is captured, not only tourism.",
    "status": "experimental",
-   "confidence": "medium",
-   "confidence_reason": "correlation of 0.56 with les arrivées de touristes internationaux (WDI) (7 years)"
+   "confidence": "low",
+   "confidence_reason": "no hotel-night statistics to validate the indicator"
   },
   {
    "uc": 8,
@@ -192,7 +192,7 @@
   {
    "dimension": "0. Prerequisites of quality",
    "practice": "Institutional environment, resources, relevance",
-   "evidence": "AfDB × IMF Big Data Center project; free satellite data; explicit policy question for each use case."
+   "evidence": "African Development Bank × Data Innovation for Africa (DI4A) project; free satellite data; explicit policy question for each use case."
   },
   {
    "dimension": "1. Assurances of integrity",
@@ -322,7 +322,7 @@
  ],
  "references": [
   "United Nations (2014). Fundamental Principles of Official Statistics. A/RES/68/261.",
-  "IMF (2012). Data Quality Assessment Framework (DQAF) — generic framework.",
+  "Data Quality Assessment Framework (DQAF, 2012) — generic framework.",
   "UNECE (2019). Generic Statistical Business Process Model, GSBPM v5.1.",
   "Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data 3.",
   "Eurostat (2021). Experimental statistics — European Statistical System guidelines."

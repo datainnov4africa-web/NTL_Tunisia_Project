@@ -112,7 +112,9 @@ function renderHeader() {
   $("#synthetic-banner").hidden = !m.synthetic;
   $("#foot").innerHTML = `Mis à jour le ${new Date(m.generated_at).toLocaleString("fr-FR")} · Données VIIRS (NOAA/EOG, NASA), ` +
     `limites ${esc((m.boundaries && m.boundaries.ADM1) || "geoBoundaries")}, population ${esc(m.pop_source || "GHSL")}, ` +
-    `Banque mondiale · Code et méthode : voir la page « Méthode & limites ».`;
+    `Banque mondiale · Code et méthode : voir la page « Méthode & limites ».<br>` +
+    `<b>© ${new Date().getFullYear()} AfDB-DI4A</b> — Banque africaine de développement, Data Innovation for Africa. ` +
+    `Toute réutilisation des chiffres, cartes et graphiques doit mentionner la source : <b>« Source : AfDB-DI4A »</b>.`;
 }
 
 function route() {
